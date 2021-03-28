@@ -17,25 +17,36 @@ Route::get('/','LandingPageController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware'=>['auth','checkrole:admin']],function(){
+    Route::get('/home', 'HomeController@index')->name('home');
+});
 
-Route::get('/cart','CartController@index')->name('cart');
+Route::group(['middleware'=>['auth','checkrole:user']],function(){
 
-Route::get('/shop','ShopController@index')->name('shop');
+    Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/shop/show/{id}','ShopController@show')->name('shopsow');
+    Route::get('/cart','CartController@index')->name('cart');
 
-Route::get('/shop/kategori/{id}','ShopController@categori')->name('categori');
+    Route::get('/shop','ShopController@index')->name('shop');
 
-Route::post('/cart/store','CartController@store')->name('storecart');
+    Route::get('/shop/show/{id}','ShopController@show')->name('shopsow');
 
-Route::delete('/cart/delete/{id}','CartController@delete')->name('cartdelete');
+    Route::get('/shop/kategori/{id}','ShopController@categori')->name('categori');
 
-Route::patch('/cart/{id}','CartController@update')->name('cartupdate');
+    Route::post('/cart/store','CartController@store')->name('storecart');
 
-Route::post('/checkout','checkoutController@store')->name('checkout');
+    Route::delete('/cart/delete/{id}','CartController@delete')->name('cartdelete');
 
-Route::get('/incheck','checkoutController@index')->name('incheck');
+    Route::patch('/cart/{id}','CartController@update')->name('cartupdate');
 
-Route::get('/detail/{id}','checkoutController@transactions_detail')->name('detail');
+    Route::post('/checkout','checkoutController@store')->name('checkout');
+
+    Route::get('/incheck','checkoutController@index')->name('incheck');
+
+    Route::get('/detail/{id}','checkoutController@transactions_detail')->name('detail');
+});
+
+
+
+
 

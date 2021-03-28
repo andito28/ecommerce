@@ -15,8 +15,12 @@ body {
     padding-bottom: 15px;
 }
 
-.bg-dark {
+/* .bg-dark {
     background-color: transparent !important;
+} */
+
+.background{
+    background-color:#e26181;
 }
 
 .bg-dark.scrolled {
@@ -104,7 +108,7 @@ body {
 
 .content {
     min-height: 100vh;
-    background-image: url("../storage/images/2-1.jpeg");
+    background-image: url("../storage/images/7.jpg");
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -257,7 +261,7 @@ body {
             width: 40% !important;
         }
         .navbar-collapse {
-            background: #434242;
+            background: #e26181;
         }
         .nav-item {
             margin-left: 20px;
