@@ -18,7 +18,13 @@ Route::get('/','LandingPageController@index');
 Auth::routes();
 
 Route::group(['middleware'=>['auth','checkrole:admin']],function(){
+
     Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/dashboard',function(){
+        return view('template.admin');
+    });
+
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){
