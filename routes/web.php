@@ -17,9 +17,12 @@ Route::get('/','LandingPageController@index');
 
 Auth::routes();
 
-Route::group(['middleware'=>['auth','checkrole:admin']],function(){
-
+Route::group(['middleware'=>['auth','checkrole:user,admin']],function(){
     Route::get('/home', 'HomeController@index')->name('home');
+});
+
+
+Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 
     Route::get('/dashboard',function(){
         return view('template.admin');
@@ -28,8 +31,6 @@ Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){
-
-    Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/cart','CartController@index')->name('cart');
 
