@@ -36,6 +36,8 @@ Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 
     Route::get('/product','ProductController@index')->name('product');
 
+    Route::get('/dataProduct','ProductController@dataProduct')->name('dataProduct');
+
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){

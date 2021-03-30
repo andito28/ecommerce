@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="{{asset('material/global/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('material/global/css/bootstrap-extend.min.css')}}">
     <link rel="stylesheet" href="{{asset('material/assets/css/site.min.css')}}">
-    <link rel="stylesheet" href="{{asset('datatable/css/datatables.bootstrap.css')}}">
+    {{-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+
 
 
 
@@ -223,7 +225,7 @@
     </footer>
     <!-- Core  -->
     <script src="{{asset('material/global/vendor/babel-external-helpers/babel-external-helpers.js')}}"></script>
-    <script src="{{asset('material/global/vendor/jquery/jquery.js')}}"></script>
+    {{-- <script src="{{asset('material/global/vendor/jquery/jquery.js')}}"></script> --}}
     <script src="{{asset('material/global/vendor/popper-js/umd/popper.min.js')}}"></script>
     <script src="{{asset('material/global/vendor/bootstrap/bootstrap.js')}}"></script>
     <script src="{{asset('material/global/vendor/animsition/animsition.js')}}"></script>
@@ -234,6 +236,7 @@
     <script src="{{asset('material/global/vendor/waves/waves.js')}}"></script>
 
     <!-- Plugins -->
+
 
     <!-- Scripts -->
     <script src="{{asset('material/global/js/Component.js')}}"></script>
@@ -246,7 +249,6 @@
     <script src="{{asset('material/assets/js/Section/Sidebar.js')}}"></script>
     <script src="{{asset('material/assets/js/Section/PageAside.js')}}"></script>
     <script src="{{asset('material/assets/js/Plugin/menu.js')}}"></script>
-    <script src="{{asset('datatable/js/jquey.dataTables.min.js')}}"></script>
 
     <script src="{{asset('material/global/js/config/colors.js')}}"></script>
     <script src="{{asset('material/assets/js/config/tour.js')}}"></script>
