@@ -14,7 +14,7 @@
 <body>
     @guest
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark background">
-		<a class="navbar-brand" href="#">My E-Commerce</a>
+		<a class="navbar-brand" href="/">My E-Commerce</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -27,7 +27,7 @@
 					<a class="nav-link underline" href="">About Us</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link underline" href="">Our Product</a>
+					<a class="nav-link underline" href="/shop">Our Product</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link button" href="/login">Sign In</a>
@@ -51,7 +51,7 @@
             <i class="fa fa-user"></i>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/home">Profile</a>
+            <a class="dropdown-item" href="/profile">Profile</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('logout') }}"
                   onclick="event.preventDefault();
@@ -87,7 +87,7 @@
 
 			</div>
 		</div>
-		<a href="" class="more">View More Products ></a>
+		<a href="/shop" class="more">View More Products ></a>
 	</div>
 
 	<footer class="footer-distributed">

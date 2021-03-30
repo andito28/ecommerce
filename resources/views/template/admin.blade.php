@@ -8,7 +8,7 @@
     <meta name="description" content="bootstrap material admin template">
     <meta name="author" content="">
 
-    <title>Dashboard Admin</title>
+    <title>@yield('title')</title>
 
     <link rel="apple-touch-icon" href="{{asset('material/assets/images/apple-touch-icon.png')}}">
     <link rel="shortcut icon" href="{{asset('material/assets/images/favicon.ico')}}">
@@ -59,7 +59,7 @@
         </button>
         <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
           <img class="navbar-brand-logo" src="{{asset('material/assets/images/logo.png')}}" title="Remark">
-          <span class="navbar-brand-text hidden-xs-down"> Remark</span>
+          <span class="navbar-brand-text hidden-xs-down"> My Ecommerce</span>
         </div>
         <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-search"
           data-toggle="collapse">
@@ -165,24 +165,16 @@
             <ul class="site-menu" data-plugin="menu">
               <li class="site-menu-category"></li>
               <li class="site-menu-item active">
-                <a class="animsition-link" href="index.html">
+                <a class="animsition-link" href="{{route('dashboard')}}">
                         <i class="site-menu-icon md-view-dashboard" aria-hidden="true"></i>
                         <span class="site-menu-title">Dashboard</span>
                     </a>
               </li>
               <li class="site-menu-item has-sub">
-                <a href="javascript:void(0)">
+                <a href="/">
                         <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
-                        <span class="site-menu-title">Layouts</span>
-                        <span class="site-menu-arrow"></span>
+                        <span class="site-menu-title">Product</span>
                 </a>
-                <ul class="site-menu-sub">
-                  <li class="site-menu-item">
-                    <a class="animsition-link" href="layouts/menu-collapsed.html">
-                      <span class="site-menu-title">Menu Collapsed</span>
-                    </a>
-                  </li>
-                </ul>
               </li>
 
               <li class="site-menu-item has-sub">
@@ -214,7 +206,7 @@
     <div class="page">
       <div class="page-content container-fluid">
         <div class="row">
-
+                @yield('content')
         </div>
       </div>
     </div>

@@ -15,6 +15,14 @@ body {
     padding-bottom: 15px;
 }
 
+/* .bg-dark {
+    background-color: transparent !important;
+} */
+
+.background{
+    background-color:#e26181;
+}
+
 .bg-dark.scrolled {
     background-color: #252525 !important;
     transition: background-color 200ms linear;
@@ -25,10 +33,11 @@ body {
     font-weight: bold;
     font-style: italic;
     margin-left: 15px;
+    font-size: 20px;
 }
 
 .navbar-nav {
-    margin-right: 3em;
+    margin-right: 1.5em;
 }
 
 .nav-item {
@@ -42,6 +51,25 @@ body {
 
 .navbar-dark .navbar-nav .nav-link:hover {
     color: white;
+}
+
+.button {
+    background: #e02853;
+    text-align: center;
+    border-radius: 10px;
+    width: 5em;
+}
+
+.more {
+    margin-top: 20px;
+    font-family: "Montserrat", sans-serif;
+    background: #ff4f77;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    width: 5em;
 }
 
 .underline {
@@ -63,7 +91,7 @@ body {
     left: 50%;
     right: 50%;
     bottom: 0;
-    background: #ff4f77;
+    background: white;
     height: 2px;
     -webkit-transition-property: left, right;
     transition-property: left, right;
@@ -79,6 +107,15 @@ body {
     right: 0;
 }
 
+.bg-dark.scrolled {
+    background-color: #252525 !important;
+    transition: background-color 200ms linear;
+}
+
+
+div#navbarTogglerDemo02.collapse.navbar-collapse{
+    font-size: 16px;
+}
 .dropdown-menu {
     left: -60px;
 }
@@ -143,4 +180,26 @@ p {
 
 .list-group-item.active a{
     color: #fff;
+}
+
+@media only screen and (max-width: 992px) {
+    .more {
+        width: 30% !important;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .more {
+            width: 40% !important;
+        }
+        .navbar-collapse {
+            background: #e26181;
+        }
+        .nav-item {
+            margin-left: 20px;
+        }
+        .button {
+            background-color: inherit;
+            text-align: left;
+        }
+    }
 }

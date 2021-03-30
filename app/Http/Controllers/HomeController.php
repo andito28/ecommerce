@@ -26,11 +26,11 @@ class HomeController extends Controller
     {
         if(Auth::user()->role == "user"){
 
-            return view('home');
+            return redirect('/shop');
 
         }elseif(Auth::user()->role == "admin"){
 
-            return view('template.admin');
+           return redirect('/dashboard');
         }
 
     }

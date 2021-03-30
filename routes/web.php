@@ -14,31 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','LandingPageController@index');
+Route::get('/shop','ShopController@index')->name('shop');
+Route::get('/shop/show/{id}','ShopController@show')->name('shopsow');
+Route::get('/shop/kategori/{id}','ShopController@categori')->name('categori');
 
 Auth::routes();
 
 Route::group(['middleware'=>['auth','checkrole:user,admin']],function(){
+
     Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/profile',function(){
+        return view('profile');
+    });
 });
 
 
 Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 
-    Route::get('/dashboard',function(){
-        return view('template.admin');
-    });
+    Route::get('/dashboard','DashboardController@index')->name('dashboard');
 
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){
 
     Route::get('/cart','CartController@index')->name('cart');
-
-    Route::get('/shop','ShopController@index')->name('shop');
-
-    Route::get('/shop/show/{id}','ShopController@show')->name('shopsow');
-
-    Route::get('/shop/kategori/{id}','ShopController@categori')->name('categori');
 
     Route::post('/cart/store','CartController@store')->name('storecart');
 
