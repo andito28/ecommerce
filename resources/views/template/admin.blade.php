@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{asset('material/global/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('material/global/css/bootstrap-extend.min.css')}}">
     <link rel="stylesheet" href="{{asset('material/assets/css/site.min.css')}}">
+    <link rel="stylesheet" href="{{asset('datatable/css/datatables.bootstrap.css')}}">
 
 
 
@@ -245,6 +246,7 @@
     <script src="{{asset('material/assets/js/Section/Sidebar.js')}}"></script>
     <script src="{{asset('material/assets/js/Section/PageAside.js')}}"></script>
     <script src="{{asset('material/assets/js/Plugin/menu.js')}}"></script>
+    <script src="{{asset('datatable/js/jquey.dataTables.min.js')}}"></script>
 
     <script src="{{asset('material/global/js/config/colors.js')}}"></script>
     <script src="{{asset('material/assets/js/config/tour.js')}}"></script>
