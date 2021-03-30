@@ -164,14 +164,14 @@
           <div>
             <ul class="site-menu" data-plugin="menu">
               <li class="site-menu-category"></li>
-              <li class="site-menu-item active">
+              <li class="site-menu-item">
                 <a class="animsition-link" href="{{route('dashboard')}}">
                         <i class="site-menu-icon md-view-dashboard" aria-hidden="true"></i>
                         <span class="site-menu-title">Dashboard</span>
                     </a>
               </li>
               <li class="site-menu-item has-sub">
-                <a href="/">
+                <a href="{{route('product')}}">
                         <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
                         <span class="site-menu-title">Product</span>
                 </a>

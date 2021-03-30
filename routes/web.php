@@ -34,6 +34,8 @@ Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 
     Route::get('/dashboard','DashboardController@index')->name('dashboard');
 
+    Route::get('/product','ProductController@index')->name('product');
+
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){

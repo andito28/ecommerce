@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class categori extends Model
+class Categori extends Model
 {
     protected $fillable = ['name'];
 }

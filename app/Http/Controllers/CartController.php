@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\cart;
+use App\Cart;
 use Auth;
 
 class CartController extends Controller
@@ -16,7 +16,7 @@ class CartController extends Controller
 
     public function index($status = null)
     {
-        $carts = cart::where('user_id',Auth::user()->id)->get();
+        $carts = Cart::where('user_id',Auth::user()->id)->get();
 
            return view('cart.index',compact('carts'));
 
@@ -25,14 +25,14 @@ class CartController extends Controller
     public function store(request $request)
     {
 
-        $duplicate = cart::where('product_id',$request->product_id)->first();
+        $duplicate = Cart::where('product_id',$request->product_id)->first();
 
         if($duplicate)
         {
             return redirect('/cart')->with('delete','Barang sudah ada di cart');
         }
 
-        cart::create([
+        Cart::create([
             'user_id' => Auth::user()->id,
             'product_id' => $request->product_id,
             'qty' => 1
@@ -43,7 +43,7 @@ class CartController extends Controller
 
     public function update(request $request,$id)
     {
-        cart::where('id',$id)->update([
+        Cart::where('id',$id)->update([
             'qty' => $request->quantity
         ]);
 
@@ -52,7 +52,7 @@ class CartController extends Controller
 
     public function delete($id)
     {
-        cart::where('id',$id)->delete();
+        Cart::where('id',$id)->delete();
         return redirect('/cart')->with('delete','Data berhasil di hapus');
     }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class transaction_detail extends Model
+class Transaction_detail extends Model
 {
     protected $fillable = ['transaction_id','product_id','qty'];
 

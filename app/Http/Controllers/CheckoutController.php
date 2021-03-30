@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\cart;
-use App\transaction;
-use App\transaction_detail;
+use App\Cart;
+use App\Transaction;
+use App\Transaction_detail;
 
 class CheckoutController extends Controller
 {
@@ -18,18 +18,18 @@ class CheckoutController extends Controller
 
     public function store()
     {
-       $carts = cart::where('user_id',Auth::user()->id);
+       $carts = Cart::where('user_id',Auth::user()->id);
 
        $cartUser = $carts->get();
 
-       $transaction = transaction::create([
+       $transaction = Transaction::create([
             'user_id' => Auth::user()->id
         ]);
 
 
         foreach($cartUser as $cart)
         {
-            transaction_detail::create([
+            Transaction_detail::create([
                 'transaction_id' => $transaction->id,
                 'product_id' => $cart->product_id,
                 'qty' => $cart->qty
@@ -45,14 +45,14 @@ class CheckoutController extends Controller
 
     public function index()
     {
-        $transactions = transaction::where('user_id',Auth::user()->id)->orderBy('created_at','DESC')->get();
+        $transactions = Transaction::where('user_id',Auth::user()->id)->orderBy('created_at','DESC')->get();
         return view('checkout.index',compact('transactions'));
     }
 
 
     public function transactions_detail($id)
     {
-        $transactions_detail = transaction_detail::where('transaction_id',$id)->get();
+        $transactions_detail = Transaction_detail::where('transaction_id',$id)->get();
 
         return view('checkout.transaction_detail',compact('transactions_detail'));
 
