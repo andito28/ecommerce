@@ -24,13 +24,14 @@ Product
 
             <div class="card-body">
 
-                <table class="table table-bordered" id="table-product">
+                <table class="table table-bordered dt-responsive" id="table-product">
                     <thead>
                         <tr>
                             <th width="15%">Name</th>
                             <th width="15%">Price</th>
+                            <th width="5%">Stock</th>
                             <th width="40%">Desc</th>
-                            <th width="15%">images</th>
+                            <th width="10%">images</th>
                             <th width="15%">Action</th>
                         </tr>
                     </thead>
@@ -120,9 +121,11 @@ Product
                     columns: [
                         { data: 'name', name: 'name' },
                         { data: 'price', name: 'price' },
+                        { data: 'stock', name: 'stock'},
                         { data: 'desc', name: 'desc' },
                         { data: 'gambar', name: 'gambar'},
                         { data: 'action', name: 'action'}
+
                     ]
                 });
             });

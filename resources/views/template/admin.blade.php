@@ -187,8 +187,8 @@
               <li class="site-menu-item has-sub">
                 <a href="javascript:void(0)">
                         <i class="site-menu-icon md-google-pages" aria-hidden="true"></i>
-                        <span class="site-menu-title">Pages</span>
-                        <span class="site-menu-arrow"></span>
+                        <span class="site-menu-title">Categori</span>
+                        {{-- <span class="site-menu-arrow"></span>
 
                         <ul class="site-menu-sub">
                             <li class="site-menu-item">
@@ -196,7 +196,7 @@
                                 <span class="site-menu-title">Menu Collapsed</span>
                               </a>
                             </li>
-                        </ul>
+                        </ul> --}}
                 </a>
               </li>
 

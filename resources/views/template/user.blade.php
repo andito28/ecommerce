@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     @yield('style')
-    <link rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}">ß
+    <link rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}">
 </head>
 <body>
     @guest
@@ -65,9 +65,10 @@
         </nav>
         @endguest
     @yield('content')
-    <script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
-    <script type="text/javascript" src="{{asset('bootstrap-4.1.3/dist/js/bootstrap.js')}}"></script>
-	<script type="text/javascript" src="{{asset('js/script.js')}}"></script>
+    {{-- {{-- <script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
+    <script type="text/javascript" src="{{asset('bootstrap-4.1.3/dist/js/bootstrap.js')}}"></script> --}}
+	{{-- <script type="text/javascript" src="{{asset('js/script.js')}}"></script> --}}
+    <script src="{{asset('js/app.js')}}"></script>
     @yield('script')
 </body>
 </html>

@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->foreignId('categori_id')->constrained('categoris');
             $table->integer('price');
+            $table->integer('stock');
             $table->string('desc');
             $table->string('images');
             $table->timestamps();
