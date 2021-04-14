@@ -14,6 +14,9 @@ Product
 @endsection
 
 @section('content')
+@php
+    $categori = App\Categori::all()
+@endphp
     <div class="col col-md-12">
         <div class="card card-shadow">
             <div class="card-header">HALAMAN PRODUCT</div>
@@ -27,12 +30,11 @@ Product
                 <table class="table table-bordered dt-responsive" id="table-product">
                     <thead>
                         <tr>
-                            <th width="15%">Name</th>
-                            <th width="15%">Price</th>
-                            <th width="5%">Stock</th>
-                            <th width="40%">Desc</th>
-                            <th width="10%">images</th>
-                            <th width="15%">Action</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>images</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                 </table>
@@ -53,17 +55,55 @@ Product
                                             <input type="hidden" name="id" id="id">
 
                                             <div class="form-group">
-                                                <label for="title" class="col-sm-12 control-label">Title</label>
+                                                <label for="title" class="col-sm-12 control-label">Name Product</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control" id="title" name="title" value="" required>
+                                                    <input type="text" class="form-control" id="title" name="nameProduct" value="">
                                                 </div>
                                             </div>
 
+                                            <div class="form-group">
+                                            <div class="col-sm-12">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                <label for="title" class="col-sm-12 control-label pl-0">Price</label>
+                                                  <input type="number" class="form-control" name="price" placeholder="Price">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                <label for="title" class="col-sm-12 control-label pl-0">Stock</label>
+                                                  <input type="number" class="form-control" name="stock" placeholder="Stock">
+                                                </div>
+                                              </div>
+                                            </div>
+                                            </div>
 
                                             <div class="form-group">
-                                                <label for="isi" class="col-sm-12 control-label">Desc</label>
+                                                <label for="categori" class="col-sm-12 control-label">Categori</label>
+                                                <div class="col-sm-12 input-group-append">
+                                                <select class="form-control" id="exampleFormControlSelect1" name="categori_id">
+                                                @foreach($categori as $ctg)
+                                                    <option value="{{$ctg->id}}">{{$ctg->name}}</option>
+                                                @endforeach
+                                                </select>
+                                                </div>
+                                              </div>
+
+                                           <div class="form-group">
+                                                <label for="gambar" class="col-sm-12 control-label">Image</label>
+                                                <div class="input-group input-group-file" data-plugin="inputGroupFile">
+                                                    <div class="col-sm-12 input-group-append">
+                                                        <input type="text" id="gambar" class="form-control" readonly placeholder="input image">
+                                                        <span class="btn btn-success btn-file">
+                                                            Choose Image
+                                                            <input type="file" name="image" id="image">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="title" class="col-sm-12 control-label">Desc</label>
                                                 <div class="col-sm-12">
-                                                    <textarea name="myberita" id="myberita"></textarea>
+                                                    <textarea class="form-control" name="desc" id="exampleFormControlTextarea1" rows="3"></textarea>
                                                 </div>
                                             </div>
 
@@ -122,7 +162,6 @@ Product
                         { data: 'name', name: 'name' },
                         { data: 'price', name: 'price' },
                         { data: 'stock', name: 'stock'},
-                        { data: 'desc', name: 'desc' },
                         { data: 'gambar', name: 'gambar'},
                         { data: 'action', name: 'action'}
 
@@ -138,6 +177,38 @@ Product
                     $('#modal-judul').html("Tambah Product"); //valuenya tambah role baru
                     $('#tambah-edit-modal').modal('show'); //modal tampil
                 });
+
+
+
+
+            //ketika tombol simpan di tekan
+            $(document).ready(function(e){
+
+                $('#form-tambah-edit').on('submit',function(e){
+
+                    e.preventDefault();
+
+                   let formData = new FormData(this);
+
+                $.ajax({
+                    type : "POST",
+                    url : "{{route('addProduct')}}",
+                    data : formData,
+                    processData: false,
+                    contentType: false,
+                    success : function(data){
+                        console.log("ok");
+                    },
+                    error: function (data) {
+                        console.log('Error:', data);
+                        $('#tombol-simpan').html('Simpan');
+                        }
+
+                });
+
+
+                });
+            });
 
             //ketika tombol edit di tekan
             $('body').on('click','.edit-product',function(){

@@ -38,6 +38,8 @@ Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 
     Route::get('/dataProduct','ProductController@dataProduct')->name('dataProduct');
 
+    Route::post('/addProduct','ProductController@store')->name('addProduct');
+
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){
