@@ -38,12 +38,17 @@
           <hr style="margin-bottom: 2em;">
           <div class="row list-product">
             @foreach($products as $product)
-            <div class="col-lg-4 item mb-5">
+            <div class="col-lg-4 item mb-5 pt-10">
+            <div class="card">
+            <div class="item" style="padding-top:10px;padding-bottom:10px;">
             <a href="{{route('shopsow',$product->id)}}">
-              <img src="{{asset('storage/images/'.$product->images)}}" alt="nopic" height="180" width="180">
+              <img src="{{asset('storage/product/'.$product->images)}}" alt="nopic" height="100px" width="100px">
               </a>
             <p class="product-name mt-3 font-weight-bold"><a href="{{route('shopsow',$product->id)}}">{{$product->name}}</a></p>
-            <p class="product-price">Rp.{{number_format($product->price,2)}}</p>
+            <p class="product-price">Rp.{{number_format($product->price)}}</p>
+
+            </div>
+            </div>
             </div>
             @endforeach
           </div>

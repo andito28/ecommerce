@@ -15,7 +15,7 @@
   <div class="row">
     <div class="wrapper">
       <div class="col-lg-4" id="picture">
-      <img src="{{asset('storage/images/product.jpg')}}" alt="" height="200" width="200">
+      <img src="{{asset('storage/product/'.$product->images)}}" alt="" height="200" width="200">
       </div>
     </div>
     <div class="col-lg-4 desc">
@@ -25,7 +25,7 @@
     <div class="col-lg-4">
       <div class="kartu">
         <p>Harga</p>
-        <h2>Rp.{{number_format($product->price,2)}}</h2>
+        <h2>Rp.{{number_format($product->price)}}</h2>
       <form action="{{route('storecart')}}" method="POST">
         @csrf
         <input type="hidden" value="{{$product->id}}" name="product_id">
@@ -49,7 +49,7 @@
       <a href="#">ABOUT</a>
       <a href="#">FAQ</a>
     </p>
-    <p>CodingStudio &copy; 2020</p>
+    <p>N763 &copy; 2021</p>
   </div>
 
 </footer>

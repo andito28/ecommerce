@@ -21,7 +21,7 @@ Product
         <div class="card card-shadow">
             <div class="card-header">HALAMAN PRODUCT</div>
 
-            <div class="card-header bg-white pb-0 pt-20">
+            <div class="card-header bg-white pb-10 pt-30">
                 <a href="javascript:void(0)" class="btn btn-primary btn-sm" id="tombol-tambah"> Add Product</a>
             </div>
 
@@ -90,12 +90,13 @@ Product
                                            <div class="form-group">
                                                 <label for="gambar" class="col-sm-12 control-label">Image</label>
                                                 <div class="input-group input-group-file" data-plugin="inputGroupFile">
-                                                    <div class="col-sm-12 input-group-append">
-                                                        <input type="text" id="gambar" class="form-control" readonly placeholder="input image">
+                                                    <div class="col-sm-3 input-group-append">
+                                                        {{-- <input type="text" id="gambar" class="form-control" readonly placeholder="input image">
                                                         <span class="btn btn-success btn-file">
                                                             Choose Image
                                                             <input type="file" name="image" id="image">
-                                                        </span>
+                                                        </span> --}}
+                                                    <input type="file" name="image">
                                                     </div>
                                                 </div>
                                             </div>
@@ -197,11 +198,15 @@ Product
                     processData: false,
                     contentType: false,
                     success : function(data){
-                        console.log("ok");
+                        $('#form-tambah-edit').trigger("reset");
+                        $('#tambah-edit-modal').modal('hide');
+                        $('#tombol-simpan').html('Simpan');
+                        var oTable = $('#table-product')
+                        .dataTable();
+                        oTable.fnDraw(false);
                     },
                     error: function (data) {
                         console.log('Error:', data);
-                        $('#tombol-simpan').html('Simpan');
                         }
 
                 });

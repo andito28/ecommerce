@@ -78,7 +78,7 @@
                    @foreach($products as $product)
                    <div class="col-lg-4 col-md-6">
                    <a href="">
-					<img src="{{asset('storage/images/'.$product->images)}}" alt="nopic" height="150" width="150">
+					<img src="{{asset('storage/product/'.$product->images)}}" alt="nopic" height="150" width="150">
 					</a>
                     <p class="product-name"><a href="#">{{$product->name}}</a></p>
                     <p class="product-price">{{$product->price}}</p>

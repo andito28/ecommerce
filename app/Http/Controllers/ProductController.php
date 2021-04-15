@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use Yajra\Datatables\Datatables;
+use Storage;
 
 class ProductController extends Controller
 {
@@ -20,7 +21,7 @@ class ProductController extends Controller
         return Datatables::of($dataProduct)
         ->addColumn('gambar',function($data){
 
-            $url = asset('storage/images/'.$data->images);
+            $url = asset('storage/Product/'.$data->images);
 
             $image = "<img src='$url' style='width:100px;height:100px;'>";
 
@@ -42,6 +43,25 @@ class ProductController extends Controller
     public function store(request $request){
 
 
+        $request->validate([
+            'images' => 'image|mimes:jpeg,png,jpg,|max:2048'
+        ]);
+
+
+        $id_product = $request->id;
+        $files = $request->file('image');
+        $file_name = date('YmdHis') . "." . $files->getClientOriginalExtension();
+
+        if($id_product == NULL){
+
+            storage::disk('local')->putFileAs('public/product',$files , $file_name);
+        }
+
+        // if($request->file('image')){
+        //     Storage::disk('local')->putFileAs('public/images/'.$request->image);
+        // }
+
+
         $post = Product::updateOrCreate(
             ['id' => $request->id],
             [
@@ -50,37 +70,12 @@ class ProductController extends Controller
                 'price' => $request->price,
                 'stock' => $request->stock,
                 'desc' => $request->desc,
-                'images' => $request->image
+                'images' =>$file_name
 
             ]
         );
 
-        // $post = new Product;
-        // $post->name = $request->nameProduct;
-        // $post->categori_id = 1;
-        // $post->price = '1';
-        // $post->stock = '1';
-        // $post->desc = 'ffgfgfghf';
-        // $post->images = 'img.jpg';
-        // $post->save();
-
         return response()->json($post);
-
-        // $id = $request->id;
-
-        // $post = Product::updateOrCreate(
-        //     ['id' => $id],
-        //     [
-        //         'name' => $request->nameProduct,
-        //         'kategori_id' => $request->kategori_id,
-        //         'price' => $request->price,
-        //         'stock' => $request->stock,
-        //         'images' => $request->image
-
-        //     ]
-        // );
-
-        // return response()->json($post);
 
     }
 }
