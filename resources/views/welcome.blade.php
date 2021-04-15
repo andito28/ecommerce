@@ -68,7 +68,7 @@
         @endguest
 	<div class="content">
 		<h1 class="title">E - Commerce</h1>
-		<h3>The Best Place for Any Solutions</h3>
+		<h3 class="under-title">The Best Place for Any Solutions</h3>
 	</div>
 	<div class="container">
 		<div class="products">
