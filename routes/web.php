@@ -40,6 +40,10 @@ Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 
     Route::post('/addProduct','ProductController@store')->name('addProduct');
 
+    Route::get('/deleteProduct/{id}','ProductController@destroy');
+
+    Route::get('/editProduct/{id}','ProductController@edit');
+
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){

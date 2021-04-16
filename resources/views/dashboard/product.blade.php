@@ -30,6 +30,7 @@ Product
                 <table class="table table-bordered dt-responsive" id="table-product">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Name</th>
                             <th>Price</th>
                             <th>Stock</th>
@@ -57,7 +58,7 @@ Product
                                             <div class="form-group">
                                                 <label for="title" class="col-sm-12 control-label">Name Product</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control" id="title" name="nameProduct" value="">
+                                                    <input type="text" class="form-control" id="nameProduct" name="nameProduct" value="">
                                                 </div>
                                             </div>
 
@@ -66,11 +67,11 @@ Product
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                 <label for="title" class="col-sm-12 control-label pl-0">Price</label>
-                                                  <input type="number" class="form-control" name="price" placeholder="Price">
+                                                  <input type="number" class="form-control" id="price" name="price" placeholder="Price">
                                                 </div>
                                                 <div class="col-sm-6">
                                                 <label for="title" class="col-sm-12 control-label pl-0">Stock</label>
-                                                  <input type="number" class="form-control" name="stock" placeholder="Stock">
+                                                  <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock">
                                                 </div>
                                               </div>
                                             </div>
@@ -104,7 +105,7 @@ Product
                                             <div class="form-group">
                                                 <label for="title" class="col-sm-12 control-label">Desc</label>
                                                 <div class="col-sm-12">
-                                                    <textarea class="form-control" name="desc" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                    <textarea class="form-control" name="desc" id="desc" rows="3"></textarea>
                                                 </div>
                                             </div>
 
@@ -160,6 +161,7 @@ Product
                     serverSide: true,
                     ajax: '{{route("dataProduct")}}',
                     columns: [
+                        {data: 'DT_RowIndex',name: 'DT_RowInde'},
                         { data: 'name', name: 'name' },
                         { data: 'price', name: 'price' },
                         { data: 'stock', name: 'stock'},
@@ -217,15 +219,47 @@ Product
 
             //ketika tombol edit di tekan
             $('body').on('click','.edit-product',function(){
-                let id = $(this).data('id');
-                $('#tambah-edit-modal').modal('show');
+                let data_id = $(this).data('id');
+
+                $.get('editProduct/' + data_id, function(data){
+                    $('#tambah-edit-modal').modal('show');
+                    $('#tombol-simpan').html('Update');
+                    $('#id').val(data.id);
+                    $('#nameProduct').val(data.name);
+                    $('#stock').val(data.stock);
+                    $('#price').val(data.price);
+                    $('#desc').val(data.desc);
+                })
+
             })
 
 
-            //ketika tombol delete di tekan
+            //ketika tombol delete di tekan dan memunculkan modal
             $('body').on('click','.delete-product',function(){
-                let id = $(this).attr('id');
+                let dataId = $(this).attr('id');
                 $('#konfirmasi-modal').modal('show');
-            })
+
+
+            //ketika tombol delete di tekan setelah ditampilkannya modal
+            $('#tombol-hapus').click(function(){
+                $.ajax({
+
+                    method: "get",
+                    url : "deleteProduct/" + dataId,
+
+                    success:function(data){
+                    $('#konfirmasi-modal').modal('hide');
+                      table =  $('#table-product')
+                        .dataTable();
+                        table.fnDraw(false);
+                    },
+                    error:function(data){
+                        console.log(data)
+                    }
+                });
+
+        });
+
+    });
 </script>
 @endsection

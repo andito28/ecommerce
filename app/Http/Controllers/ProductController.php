@@ -49,17 +49,30 @@ class ProductController extends Controller
 
 
         $id_product = $request->id;
+        $data_product = Product::where('id',$id_product)->first();
         $files = $request->file('image');
-        $file_name = date('YmdHis') . "." . $files->getClientOriginalExtension();
 
-        if($id_product == NULL){
 
+        if($id_product == NULL && !$request->file('image')){
+
+            $file_name = "product.jpg";
+
+        }elseif($id_product == NULL && $request->file('image')){
+
+            $file_name = date('YmdHis') . "." . $files->getClientOriginalExtension();
             storage::disk('local')->putFileAs('public/product',$files , $file_name);
-        }
 
-        // if($request->file('image')){
-        //     Storage::disk('local')->putFileAs('public/images/'.$request->image);
-        // }
+        }elseif($id_product == $data_product->id && $request->file('image')){
+
+            storage::delete('/public/product/'.$data_product->images);
+            $file_name = date('YmdHis').".".$files->getClientOriginalExtension();
+            storage::disk('local')->putFileAs('public/product',$files,$file_name);
+
+        }else{
+
+            $file_name = $data_product->images;
+
+        }
 
 
         $post = Product::updateOrCreate(
@@ -77,5 +90,26 @@ class ProductController extends Controller
 
         return response()->json($post);
 
+    }
+
+
+    public function destroy($id){
+
+        $product = Product::where('id',$id)->first();
+
+        storage::delete('public/product/'.$product->images);
+
+        $post = Product::where('id',$id)->first();
+
+        $post->delete();
+
+        return response()->json($post);
+    }
+
+
+    public function edit($id){
+
+        $post = Product::where('id',$id)->first();
+        return response()->json($post);
     }
 }
