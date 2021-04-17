@@ -100,9 +100,10 @@ hr {
   background: #ff4f77;
 }
 
-.title {
+.title-name {
   font-family: "Montserrat", sans-serif;
   margin-top: 100px;
+  font-weight: bold;
 }
 
 .desc {

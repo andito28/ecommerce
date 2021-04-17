@@ -66,7 +66,7 @@
             </div>
         </nav>
         @endguest
-	<div class="content">
+	<div class="content-user">
 		<h1 class="title">E - Commerce</h1>
 		<h3 class="under-title">The Best Place for Any Solutions</h3>
 	</div>
@@ -76,15 +76,13 @@
 			<div class="row list-product">
 
                    @foreach($products as $product)
-                   <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                    <div class="item" style="padding-top:20px;">
-                        <a href="">
-                            <img src="{{asset('storage/product/'.$product->images)}}" alt="nopic" height="150" width="150" style="padding-bottom:20px;">
-                            </a>
-                            <p class="product-name"><a href="#">{{$product->name}}</a></p>
-                            <p class="product-price">Rp {{number_format($product->price)}}</p>
-                        </div>
+                   <div class="col-lg-4 col-md-6 ">
+                    <div class="card" style="padding-top:20px;">
+                   <a href="">
+					<img src="{{asset('storage/product/'.$product->images)}}" alt="nopic" height="150" width="150" style="padding-bottom:20px;">
+					</a>
+                    <p class="product-name"><a href="#">{{$product->name}}</a></p>
+                    <p class="product-price">Rp {{number_format($product->price)}}</p>
                     </div>
                   </div>
                   @endforeach

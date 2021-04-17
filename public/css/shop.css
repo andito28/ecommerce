@@ -126,7 +126,7 @@ div#navbarTogglerDemo02.collapse.navbar-collapse{
 }
 
 .category {
-    margin-top: 150px;
+    margin-top: 75px;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -141,7 +141,7 @@ div#navbarTogglerDemo02.collapse.navbar-collapse{
 }
 
 .item-list {
-    margin-top: 100px;
+    margin-top: 75px;
     padding: 0;
     font-family: "Montserrat", sans-serif;
 }

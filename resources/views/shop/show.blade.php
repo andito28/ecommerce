@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="container">
-<h2 class="title">{{$product->name}}</h2>
+<h2 class="title-name">{{$product->name}}</h2>
   <hr>
   <div class="row">
     <div class="wrapper">

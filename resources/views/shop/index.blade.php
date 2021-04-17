@@ -16,9 +16,9 @@
 <div class="content">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-4 pt-100">
         <div class="category">
-          <h2 id="category-label">Categories</h2>
+          <h3 id="category-label">Categories</h3>
           <ul class="list-group">
           <li class="list-group-item {{$id == null ?'active':''}}"><a href="{{route('shop')}}"> All</a></li>
             @foreach($categoris as $categori)
@@ -34,7 +34,7 @@
       </div>
         <div class="col-lg-8">
           <div class="item-list">
-          <h2>Our Products</h2>
+          <h4>Our Products</h4>
           <hr style="margin-bottom: 2em;">
           <div class="row list-product">
             @foreach($products as $product)

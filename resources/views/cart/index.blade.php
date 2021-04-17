@@ -1,4 +1,4 @@
-@extends('template.user')
+@extends('template.cart')
 
 @section('title')
     Cart

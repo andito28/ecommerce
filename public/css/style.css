@@ -106,7 +106,7 @@ body {
     right: 0;
 }
 
-.content {
+.content-user {
     min-height: 100vh;
     background-image: url("../storage/images/shop.jpg");
     background-size: cover;
@@ -262,6 +262,12 @@ body {
     }
 
     @media only screen and (max-width: 768px) {
+
+        .title {
+            font-size: 3em;
+            font-weight: bold;
+            padding-left: 50px;
+        }
         .more {
             width: 40% !important;
         }

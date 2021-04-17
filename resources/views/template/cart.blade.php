@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<title>My E-Commerce</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@yield('title')</title>
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     @yield('style')
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" type="text/css" href="{{asset('bootstrap-4.1.3/dist/css/bootstrap.css')}}">
-	<link rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}">
 </head>
-
 <body>
     @guest
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark background">
@@ -28,7 +25,7 @@
 					<a class="nav-link underline" href="">About Us</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link underline" href="/shop">Our Product</a>
+					<a class="nav-link underline" href="">Our Product</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link button" href="/login">Sign In</a>
@@ -38,7 +35,7 @@
     </nav>
     @else
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark background">
-            <a class="navbar-brand" href="/">My E-Commerce</a>
+            <a class="navbar-brand" href="/shop">My E-Commerce</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -67,34 +64,11 @@
             </div>
         </nav>
         @endguest
-
-	<div class="content">
-        @yield('content')
-	</div>
-
-	<footer class="footer-distributed">
-		<div class="footer-right">
-			<a href="#"><i class="fa fa-facebook"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-linkedin"></i></a>
-			<a href="#"><i class="fa fa-gitlab"></i></a>
-		</div>
-		<div class="footer-left">
-			<p class="footer-links">
-				<a class="link-1" href="#">HOME</a>
-				<a href="#">SHOP</a>
-				<a href="#">ABOUT</a>
-				<a href="#">FAQ</a>
-			</p>
-			<p> &copy; 2021</p>
-		</div>
-
-    </footer>
-    <script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
-	<script type="text/javascript" src="{{asset('bootstrap-4.1.3/dist/js/bootstrap.js')}}"></script>
-	<script type="text/javascript" src="{{asset('js/script.js')}}"></script>
+    @yield('content')
+    {{-- {{-- <script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
+    <script type="text/javascript" src="{{asset('bootstrap-4.1.3/dist/js/bootstrap.js')}}"></script> --}}
+	{{-- <script type="text/javascript" src="{{asset('js/script.js')}}"></script> --}}
+    <script src="{{asset('js/app.js')}}"></script>
+    @yield('script')
 </body>
-
 </html>
-
-
