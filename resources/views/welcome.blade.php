@@ -77,11 +77,15 @@
 
                    @foreach($products as $product)
                    <div class="col-lg-4 col-md-6">
-                   <a href="">
-					<img src="{{asset('storage/product/'.$product->images)}}" alt="nopic" height="150" width="150">
-					</a>
-                    <p class="product-name"><a href="#">{{$product->name}}</a></p>
-                    <p class="product-price">{{$product->price}}</p>
+                    <div class="card">
+                    <div class="item" style="padding-top:20px;">
+                        <a href="">
+                            <img src="{{asset('storage/product/'.$product->images)}}" alt="nopic" height="150" width="150" style="padding-bottom:20px;">
+                            </a>
+                            <p class="product-name"><a href="#">{{$product->name}}</a></p>
+                            <p class="product-price">Rp {{number_format($product->price)}}</p>
+                        </div>
+                    </div>
                   </div>
                   @endforeach
 

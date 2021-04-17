@@ -179,6 +179,7 @@ Product
                     $('#form-tambah-edit').trigger("reset"); //mereset semua input dll didalamnya
                     $('#modal-judul').html("Tambah Product"); //valuenya tambah role baru
                     $('#tambah-edit-modal').modal('show'); //modal tampil
+                    $('#tombol-simpan').html('Add');
                 });
 
 
@@ -202,7 +203,6 @@ Product
                     success : function(data){
                         $('#form-tambah-edit').trigger("reset");
                         $('#tambah-edit-modal').modal('hide');
-                        $('#tombol-simpan').html('Simpan');
                         var oTable = $('#table-product')
                         .dataTable();
                         oTable.fnDraw(false);
