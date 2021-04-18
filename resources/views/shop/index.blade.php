@@ -16,9 +16,14 @@
 <div class="content">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 pt-100">
+      <div class="col-lg-4">
+        <h4 id="category-label" class="search ">Search Product</h4>
+        <form action="{{route('shop')}}" class="form-inline ml-5">
+        <input type="text" class="form-control" name="search" value="{{$search}}">
+        <button class="btn btn-primary ">Search</button>
+        </form>
         <div class="category">
-          <h3 id="category-label">Categories</h3>
+          <h4 id="category-label">Categories</h4>
           <ul class="list-group">
           <li class="list-group-item {{$id == null ?'active':''}}"><a href="{{route('shop')}}"> All</a></li>
             @foreach($categoris as $categori)
@@ -26,11 +31,7 @@
            @endforeach
           </ul>
         </div>
-        <h2 id="category-label" class="text-center mt-5">Search Product</h2>
-    <form action="{{route('shop')}}" class="form-inline ml-5">
-    <input type="text" class="form-control" name="search" value="{{$search}}">
-          <button class="btn btn-primary">Search</button>
-        </form>
+
       </div>
         <div class="col-lg-8">
           <div class="item-list">
