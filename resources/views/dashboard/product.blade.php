@@ -59,6 +59,7 @@ Product
                                                 <label for="title" class="col-sm-12 control-label">Name Product</label>
                                                 <div class="col-sm-12">
                                                     <input type="text" class="form-control" id="nameProduct" name="nameProduct" value="">
+                                                    <span id="nameError" class="text-danger"></span>
                                                 </div>
                                             </div>
 
@@ -68,10 +69,12 @@ Product
                                                 <div class="col-sm-6">
                                                 <label for="title" class="col-sm-12 control-label pl-0">Price</label>
                                                   <input type="number" class="form-control" id="price" name="price" placeholder="Price">
+                                                  <span id="priceError" class="text-danger"></span>
                                                 </div>
                                                 <div class="col-sm-6">
                                                 <label for="title" class="col-sm-12 control-label pl-0">Stock</label>
                                                   <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock">
+                                                  <span id="stockError" class="text-danger"></span>
                                                 </div>
                                               </div>
                                             </div>
@@ -85,6 +88,7 @@ Product
                                                     <option value="{{$ctg->id}}">{{$ctg->name}}</option>
                                                 @endforeach
                                                 </select>
+                                                <span id="categoriError" class="text-danger"></span>
                                                 </div>
                                               </div>
 
@@ -100,12 +104,16 @@ Product
                                                     <input type="file" name="image">
                                                     </div>
                                                 </div>
+                                                <div class="col-sm-12 input-group-append">
+                                                <span id="imageError" class="text-danger"></span>
+                                                </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="title" class="col-sm-12 control-label">Desc</label>
                                                 <div class="col-sm-12">
                                                     <textarea class="form-control" name="desc" id="desc" rows="3"></textarea>
+                                                    <span id="descError" class="text-danger"></span>
                                                 </div>
                                             </div>
 
@@ -207,8 +215,45 @@ Product
                         .dataTable();
                         oTable.fnDraw(false);
                     },
-                    error: function (data) {
+                    error: function (data ) {
                         console.log('Error:', data);
+
+                        const message = "Field tidak boleh kosong";
+
+                        if(data.status == 422){
+                            if(data.responseJSON.errors.nameProduct){
+                               $('#nameError').text(message);
+                            }else{
+                                $('#nameError').text('');
+                            }
+
+                            if(data.responseJSON.errors.price){
+                               $('#priceError').text(message);
+                            }else{
+                                $('#priceError').text('');
+                            }
+
+                            if(data.responseJSON.errors.image){
+                               $('#imageError').text('file harus berformat jpg/jpeg/png');
+                            console.log('ok')
+                            }else{
+                                // $('#imageError').text('');
+                            console.log('no')
+                            }
+
+                            if(data.responseJSON.errors.stock){
+                               $('#stockError').text(message);
+                            }else{
+                                $('#stockError').text('');
+                            }
+
+                            if(data.responseJSON.errors.desc){
+                               $('#descError').text(message);
+                            }else{
+                                $('#descError').text('');
+                            }
+                        }
+
                         }
 
                 });
@@ -229,6 +274,13 @@ Product
                     $('#stock').val(data.stock);
                     $('#price').val(data.price);
                     $('#desc').val(data.desc);
+                    $('#nameError').text('');
+                    $('#priceError').text('');
+                    $('#stockError').text('');
+                    $('#imageError').text('');
+                    $('#descError').text('');
+                    $('#nameError').text('');
+
                 })
 
             })
