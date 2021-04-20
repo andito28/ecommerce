@@ -44,6 +44,10 @@ Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 
     Route::get('/editProduct/{id}','ProductController@edit');
 
+    Route::get('/categori','CategoriController@index')->name('categori');
+
+    Route::get('/dataCategori','CategoriController@dataCategori')->name('dataCategori');
+
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){

@@ -145,11 +145,10 @@ body {
 
 .list-product {
     text-align: center;
-    font-family: "Helvetica-Neue";
-    font-weight: bold;
 }
 
 .product-name > a {
+    font-family: "Helvetica-Neue";
     color: black;
     text-decoration: none;
     font-weight: bold;
@@ -157,7 +156,12 @@ body {
 }
 
 .product-price {
-    font-family: "Helvetica-Neue";
+    font-weight: bold;
+}
+
+.product-price-m {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .more {

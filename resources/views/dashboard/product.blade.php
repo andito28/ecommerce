@@ -10,7 +10,7 @@
 </style>
 
 @section('title')
-Product
+Dashboard | Product
 @endsection
 
 @section('content')
@@ -169,7 +169,7 @@ Product
                     serverSide: true,
                     ajax: '{{route("dataProduct")}}',
                     columns: [
-                        {data: 'DT_RowIndex',name: 'DT_RowInde'},
+                        {data: 'DT_RowIndex',name: 'DT_RowIndex'},
                         { data: 'name', name: 'name' },
                         { data: 'price', name: 'price' },
                         { data: 'stock', name: 'stock'},

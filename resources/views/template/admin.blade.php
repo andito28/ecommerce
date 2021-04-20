@@ -188,7 +188,7 @@
               </li>
 
               <li class="site-menu-item has-sub">
-                <a href="javascript:void(0)">
+                <a href="{{route('categori')}}">
                         <i class="site-menu-icon md-google-pages" aria-hidden="true"></i>
                         <span class="site-menu-title">Categori</span>
                         {{-- <span class="site-menu-arrow"></span>

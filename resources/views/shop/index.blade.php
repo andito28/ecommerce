@@ -17,11 +17,6 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4">
-        <h4 id="category-label" class="search ">Search Product</h4>
-        <form action="{{route('shop')}}" class="form-inline ml-5">
-        <input type="text" class="form-control" name="search" value="{{$search}}">
-        <button class="btn btn-primary ">Search</button>
-        </form>
         <div class="category">
           <h4 id="category-label">Categories</h4>
           <ul class="list-group">
@@ -35,8 +30,19 @@
       </div>
         <div class="col-lg-8">
           <div class="item-list">
-          <h4>Our Products</h4>
-          <hr style="margin-bottom: 2em;">
+            <div class="row">
+              <div class="col-md-6">
+                  <h4>Our Products</h4>
+              </div>
+
+              <div class="col-md-6">
+                <form action="{{route('shop')}}" class="form-inline ml-4">
+                    <input type="text" class="form-control" name="search" value="{{$search}}" placeholder="Searching . . . . .">
+                    <button class="btn btn-primary ">Search</button>
+                  </form>
+              </div>
+            </div>
+          <hr style="margin-bottom: 2em;height:2px;border:none;">
           <div class="row list-product">
             @foreach($products as $product)
             <div class="col-lg-4 item mb-5 pt-10">
@@ -45,8 +51,8 @@
             <a href="{{route('shopsow',$product->id)}}">
               <img src="{{asset('storage/product/'.$product->images)}}" alt="nopic" height="100px" width="100px">
               </a>
-            <p class="product-name mt-3 font-weight-bold"><a href="{{route('shopsow',$product->id)}}">{{$product->name}}</a></p>
-            <p class="product-price">Rp.{{number_format($product->price)}}</p>
+            <p class="product-name mt-3"><a href="{{route('shopsow',$product->id)}}">{{$product->name}}</a></p>
+            <p class="product-price">Rp {{number_format($product->price)}}</p>
 
             </div>
             </div>
