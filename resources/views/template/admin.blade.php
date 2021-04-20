@@ -24,6 +24,9 @@
        <!-- DataTables -->
        <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 
+       {{-- plugin alert izitoas --}}
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css" integrity="sha256-pODNVtK3uOhL8FUNWWvFQK0QoQoV3YA9wGGng6mbZ0E=" crossorigin="anonymous" />
+
 
 
 
@@ -261,6 +264,7 @@
     <!-- Page -->
     <script src="{{asset('material/assets/js/Site.js')}}"></script>
     <script src="{{asset('material/assets/examples/js/dashboard/v1.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js" integrity="sha256-siqh9650JHbYFKyZeTEAhq+3jvkFCG8Iz+MHdr9eKrw=" crossorigin="anonymous"></script>
 
   </body>
 </html>

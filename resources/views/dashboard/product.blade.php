@@ -214,6 +214,12 @@ Product
                         var oTable = $('#table-product')
                         .dataTable();
                         oTable.fnDraw(false);
+                        iziToast.success({
+                        title: 'Data Berhasil Disimpan',
+                        message: '{{ Session('
+                        success ')}}',
+                        position: 'bottomRight'
+                        });
                     },
                     error: function (data ) {
                         console.log('Error:', data);
@@ -235,10 +241,8 @@ Product
 
                             if(data.responseJSON.errors.image){
                                $('#imageError').text('file harus berformat jpg/jpeg/png');
-                            console.log('ok')
                             }else{
-                                // $('#imageError').text('');
-                            console.log('no')
+                                $('#imageError').text('');
                             }
 
                             if(data.responseJSON.errors.stock){
@@ -304,6 +308,12 @@ Product
                       table =  $('#table-product')
                         .dataTable();
                         table.fnDraw(false);
+                        iziToast.warning({ //tampilkan izitoast warning
+                        title: 'Data Berhasil Dihapus',
+                        message: '{{ Session('
+                        delete ')}}',
+                        position: 'bottomRight'
+                    });
                     },
                     error:function(data){
                         console.log(data)

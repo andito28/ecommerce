@@ -49,7 +49,7 @@ class ProductController extends Controller
             'price' => 'required',
             'stock' => 'required',
             'desc' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,|max:2048'
+            'image' => 'image|mimes:jpeg,png,jpg,|max:2048'
         ]);
 
 
