@@ -19,12 +19,49 @@ class CategoriController extends Controller
 
         return Datatables::of($dataCategori)
         ->addColumn('action',function($data){
-            $button = "<a href='javascript:void(0)' class='edit-categori' id='$data->id'> Edit </a> ";
+            $button = "<a href='javascript:void(0)' class='btn btn-success btn-sm edit-categori' id='$data->id'> Edit </a> ";
+            $button .= '&nbsp;&nbsp;';
+            $button .= "<a href='javascript:void(0)' class='btn btn-danger btn-sm delete-categori' id='$data->id'> Delete </a> ";
             return $button;
         })
         ->rawColumns(['action'])
         ->addIndexColumn()
         ->make(true);
+    }
+
+
+    public function store(request $request){
+
+
+        $id = $request->id;
+
+        $request->validate([
+            'categori' => 'required'
+        ]);
+
+        $post = Categori::updateOrCreate(
+            ['id' => $id],
+            ['name' => $request->categori]
+        );
+
+        return response()->json($post);
+
+    }
+
+
+
+    public function edit($id){
+
+        $post = Categori::where('id',$id)->first();
+        return response()->json($post);
+
+    }
+
+
+    public function destroy($id){
+
+        $post = Categori::where('id',$id)->delete();
+        return response()->json($post);
     }
 
 }

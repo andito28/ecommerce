@@ -48,6 +48,12 @@ Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 
     Route::get('/dataCategori','CategoriController@dataCategori')->name('dataCategori');
 
+    Route::post('/addCategori','CategoriController@store')->name('addCategori');
+
+    Route::get('/editCategori/{id}','CategoriController@edit');
+
+    Route::get('/deleteCategori/{id}','CategoriController@destroy');
+
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){

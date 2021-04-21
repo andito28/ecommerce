@@ -53,7 +53,7 @@
                                 <div class="form-group">
                                     <label for="title" class="col-sm-12 control-label">Categori</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" id="categori" name="nameProduct" value="">
+                                        <input type="text" class="form-control" id="categori" name="categori" value="">
                                         <span id="nameError" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -76,17 +76,40 @@
     {{-- end modal add and edit --}}
 
 
+       {{-- modal delete --}}
+       <div class="modal fade" tabindex="-1" role="dialog" id="konfirmasi-modal" data-backdrop="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">PERHATIAN</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Hapus Categori, apakah anda yakin?</p>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger btn-sm" name="tombol-hapus" id="tombol-hapus">Hapus Data</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- end modal delete --}}
+
+
     <script>
 
         $(function(){
             $('#table-categori').DataTable({
-                processing:true,
-                serverside:true,
+                processing: true,
+                serverSide: true,
                 ajax: "{{route('dataCategori')}}",
-                column : [
+                columns : [
                     {data: 'DT_RowIndex',name: 'DT_RowIndex'},
-                    {data: 'name', name: 'name'},
-                    {data: 'action',name: 'action'}
+                    { data: 'name', name: 'name' },
+                    { data: 'action', name: 'action' },
                 ]
             });
         });
@@ -94,8 +117,97 @@
         //ketika tombol tambah di tekan
         $('#tombol-tambah').on('click',function(){
             $('#id').val("");
-            $('#tambah-edit-modal').trigger('reset');
+            $('#form-tambah-edit').trigger('reset');
             $('#tambah-edit-modal').modal('show');
+        });
+
+
+
+        //ketika tombol edit ditekan
+        $('body').on('click','.edit-categori',function(){
+            const id = $(this).attr('id');
+
+            $.get('editCategori/' + id ,function(data){
+                $('#tambah-edit-modal').modal('show');
+                $('#categori').val(data.name);
+                $('#id').val(data.id);
+            });
+        });
+
+
+        //ketika tombol smipan di tekan
+
+
+
+        $('#form-tambah-edit').on('submit',function(e){
+
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            $.ajax({
+                type : "POST",
+                url : "{{route('addCategori')}}",
+                data : formData,
+                processData : false,
+                contentType : false,
+
+                success:function(){
+                    $('#form-tambah-edit').trigger("reset");
+                        $('#tambah-edit-modal').modal('hide');
+                        const table = $('#table-categori')
+                        .dataTable();
+                        table.fnDraw(false);
+                        iziToast.success({
+                        title: 'Data Berhasil Disimpan',
+                        message: '{{ Session('
+                        success ')}}',
+                        position: 'bottomRight'
+                        });
+                },
+
+                error:function(data){
+                    console.log(data)
+                }
+
+            })
+        })
+
+
+        //ketika tombol hapus ditekan
+
+        $('body').on('click','.delete-categori',function(){
+
+            $('#konfirmasi-modal').modal('show')
+            const dataId = $(this).attr('id');
+
+            $('#tombol-hapus').on('click',function(){
+
+                    $.ajax({
+                    method : 'get',
+                    url : 'deleteCategori/' + dataId,
+
+                    success:function(){
+                        $('#konfirmasi-modal').modal('hide');
+                         table =  $('#table-categori')
+                        .dataTable();
+                        table.fnDraw(false);
+                        iziToast.warning({ //tampilkan izitoast warning
+                        title: 'Data Berhasil Dihapus',
+                        message: '{{ Session('
+                        delete ')}}',
+                        position: 'bottomRight'
+                    });
+                    },
+
+                    error:function(data){
+
+                        console.log(data)
+                    }
+                });
+
+            });
+
         });
 
 
