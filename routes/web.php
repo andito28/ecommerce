@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','LandingPageController@index');
 Route::get('/shop','ShopController@index')->name('shop');
 Route::get('/shop/show/{id}','ShopController@show')->name('shopsow');
-Route::get('/shop/kategori/{id}','ShopController@categori')->name('categori');
+Route::get('/shop/kategori/{id}','ShopController@categori')->name('categoriId');
 
 Auth::routes();
 

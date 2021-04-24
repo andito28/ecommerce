@@ -22,7 +22,7 @@
           <ul class="list-group">
           <li class="list-group-item {{$id == null ?'active':''}}"><a href="{{route('shop')}}"> All</a></li>
             @foreach($categoris as $categori)
-          <li class="list-group-item {{$categori->id == $id ?'active':''}}"><a href="{{route('categori',$categori->id)}}">{{$categori->name}}</a></li>
+          <li class="list-group-item {{$categori->id == $id ?'active':''}}"><a href="{{route('categoriId',$categori->id)}}">{{$categori->name}}</a></li>
            @endforeach
           </ul>
         </div>

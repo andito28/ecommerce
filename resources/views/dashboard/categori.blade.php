@@ -19,7 +19,7 @@
 
             <div class="card-body">
 
-                <table class="table table-bordered" id="table-categori">
+                <table class="table table-bordered dt-responsive" id="table-categori">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -54,7 +54,7 @@
                                     <label for="title" class="col-sm-12 control-label">Categori</label>
                                     <div class="col-sm-12">
                                         <input type="text" class="form-control" id="categori" name="categori" value="">
-                                        <span id="nameError" class="text-danger"></span>
+                                        <span id="categoriError" class="text-danger"></span>
                                     </div>
                                 </div>
 
@@ -131,6 +131,7 @@
                 $('#tambah-edit-modal').modal('show');
                 $('#categori').val(data.name);
                 $('#id').val(data.id);
+                $('#categoriError').text('');
             });
         });
 
@@ -167,6 +168,14 @@
                 },
 
                 error:function(data){
+
+                    if(data.status == 422){
+                        if(data.responseJSON.errors.categori){
+                            $('#categoriError').text('field tidak boleh kosong')
+                        }else{
+                            $('#categoriError').text('');
+                        }
+                    }
                     console.log(data)
                 }
 
