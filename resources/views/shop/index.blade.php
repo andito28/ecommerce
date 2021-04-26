@@ -24,8 +24,10 @@
             @foreach($categoris as $categori)
           <li class="list-group-item {{$categori->id == $id ?'active':''}}"><a href="{{route('categoriId',$categori->id)}}">{{$categori->name}}</a></li>
            @endforeach
-          </ul>
+          </ul><br>
+          {{-- {{$categoris->links()}} --}}
         </div>
+
 
       </div>
         <div class="col-lg-8">
