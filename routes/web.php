@@ -71,6 +71,12 @@ Route::group(['middleware'=>['auth','checkrole:user']],function(){
     Route::get('/incheck','checkoutController@index')->name('incheck');
 
     Route::get('/detail/{id}','checkoutController@transactions_detail')->name('detail');
+
+    Route::get('/order','OrderController@index')->name('order');
+
+    Route::post('/order/store','OrderController@store')->name('orderStore');
+
+    Route::get('/detailOrder','OrderController@detail')->name('detailOrder');
 });
 
 

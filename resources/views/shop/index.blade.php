@@ -46,6 +46,17 @@
             </div>
           <hr style="margin-bottom: 2em;height:2px;border:none;">
           <div class="row list-product">
+            @if($products->count() < 1)
+
+            <div class="col-lg-12 item mb-5 pt-10">
+                <div class="card">
+                    <div class="card-body" style="padding-bottom:50px;padding-top:50px;">
+                        <h3>the item is not ready </h3>
+                    </div>
+                </div>
+            </div>
+
+            @else
             @foreach($products as $product)
             <div class="col-lg-4 item mb-5 pt-10">
             <div class="card">
@@ -60,6 +71,8 @@
             </div>
             </div>
             @endforeach
+
+            @endif
           </div>
           {{$products->links()}}
         </div>

@@ -87,9 +87,11 @@
     <div class="col-md-6">
         <!-- Button trigger modal -->
         @if(count($carts) > 0)
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-top:40px;">
+        {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-top:40px;">
             Checkout
-        </button>
+        </button> --}}
+
+        <a href="{{route('order')}}" class="btn btn-primary" style="margin-top:40px;">Checkout</a>
         @endif
     </div>
 

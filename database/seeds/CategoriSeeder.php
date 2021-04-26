@@ -27,6 +27,26 @@ class CategoriSeeder extends Seeder
             'name' => 'sepatu'
         ]);
 
+        DB::table('categoris')->insert([
+            'name' => 'lemari'
+        ]);
+
+        DB::table('categoris')->insert([
+            'name' => 'kipas'
+        ]);
+
+        DB::table('categoris')->insert([
+            'name' => 'sendal'
+        ]);
+
+        DB::table('categoris')->insert([
+            'name' => 'meja'
+        ]);
+
+        DB::table('categoris')->insert([
+            'name' => 'kursi'
+        ]);
+
 
 
     }

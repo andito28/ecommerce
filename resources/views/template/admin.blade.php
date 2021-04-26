@@ -203,6 +203,20 @@
                 </a>
               </li>
 
+              <li class="site-menu-item has-sub">
+                <a href="">
+                        <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
+                        <span class="site-menu-title">Users</span>
+                </a>
+              </li>
+
+              <li class="site-menu-item has-sub">
+                <a href="">
+                        <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
+                        <span class="site-menu-title">Orders</span>
+                </a>
+              </li>
+
              </ul>
               </li>
             </ul>
