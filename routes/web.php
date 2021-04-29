@@ -76,7 +76,7 @@ Route::group(['middleware'=>['auth','checkrole:user']],function(){
 
     Route::post('/order/store','OrderController@store')->name('orderStore');
 
-    Route::get('/detailOrder','OrderController@detail')->name('detailOrder');
+    Route::get('/detailOrder/{id}','OrderController@detail')->name('detailOrder');
 });
 
 

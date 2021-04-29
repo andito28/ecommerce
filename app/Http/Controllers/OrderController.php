@@ -14,7 +14,12 @@ class OrderController extends Controller
 
         $cart = Cart::where('user_id',Auth::user()->id)->get();
 
-        return view('order.index',compact('cart'));
+        if($cart->count() < 1){
+            return redirect()->route('shop');
+        }else{
+            return view('order.index',compact('cart'));
+        }
+
     }
 
     public function store(request $request){
@@ -49,14 +54,20 @@ class OrderController extends Controller
 
         $carts->delete();
 
-        return redirect()->route('detailOrder');
+        return redirect()->route('detailOrder',['id' => $order->id]);
     }
 
 
 
-    public function detail(){
-        return view('order.order_detail');
+    public function detail($id){
+
+        $detailOrder = Order_detail::where('order_id',$id)->get();
+        return view('order.order_detail',compact('detailOrder'));
     }
+
+
+
+
 
 
 }

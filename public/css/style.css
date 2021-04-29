@@ -108,7 +108,7 @@ body {
 
 .content-user {
     min-height: 100vh;
-    background-image: url("../storage/images/shop.jpg");
+    background-image: url("../images/shop.jpg");
     background-size: cover;
     display: flex;
     flex-direction: column;

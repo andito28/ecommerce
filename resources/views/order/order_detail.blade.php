@@ -11,6 +11,12 @@
 @section('content')
 <div class="container">
 
+    @foreach($detailOrder as $detail)
+
+    <span>{{$detail->product->name}}</span>
+
+    @endforeach
+
 </div>
 @endsection
 
