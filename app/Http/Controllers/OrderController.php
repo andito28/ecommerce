@@ -22,6 +22,14 @@ class OrderController extends Controller
 
     }
 
+    public function orderList(){
+
+        $orders = Order::where('user_id',Auth::user()->id)->orderBy('created_at','DESC')->get();
+
+        return view('order.order_list',compact('orders'));
+
+    }
+
     public function store(request $request){
 
         $carts = Cart::where('user_id',Auth::user()->id);
@@ -60,9 +68,9 @@ class OrderController extends Controller
 
 
     public function detail($id){
-
+        $order = Order::where('id',$id)->first();
         $detailOrder = Order_detail::where('order_id',$id)->get();
-        return view('order.order_detail',compact('detailOrder'));
+        return view('order.order_detail',compact('detailOrder','order'));
     }
 
 

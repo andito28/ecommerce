@@ -44,6 +44,9 @@
                     <li class="nav-item">
                         <a class="nav-link underline" href="/cart"><i class="fa fa-shopping-cart"></i> Cart</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link underline" href="/orderList"><i class=""></i>Order</a>
+                    </li>
             <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-user"></i>
@@ -65,6 +68,7 @@
         </nav>
         @endguest
     @yield('content')
+
     {{-- {{-- <script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
     <script type="text/javascript" src="{{asset('bootstrap-4.1.3/dist/js/bootstrap.js')}}"></script> --}}
 	{{-- <script type="text/javascript" src="{{asset('js/script.js')}}"></script> --}}

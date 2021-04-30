@@ -19,14 +19,32 @@
     @else --}}
 
     @if ($message = session('warning'))
-      <div class="alert alert-danger" role="alert">
-        {{$message}}
-      </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{$message}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+
       @elseif($message = session('delete'))
-      <div class="alert alert-danger" role="alert">
-        {{$message}}
-      </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{$message}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
     @endif
+
+
+@if ($carts->count() == 0)
+<div class="col-lg-12 item mb-5 pt-10">
+    <div class="card text-center">
+        <div class="card-body" style="padding-bottom:50px;padding-top:50px;">
+            <h3>There are no items in the cart </h3>
+        </div>
+    </div>
+</div>
+@else
 <div>
     <h3>{{$carts->count()}} Item in your cart</h3>
 </div>
@@ -57,7 +75,7 @@
                 <div class="bottom">
                    <div class="row">
                         <p class="col-md-6 item-desc">
-                           Deskripsi
+                           Stock : {{$cart->product->stock}}
                         </p>
                         <div class="offset-md-4">
 
@@ -83,25 +101,40 @@
     $total += ($cart->item->price * $cart->quantity);
     @endphp --}}
 
-    <div class="row">
-    <div class="col-md-6">
-        <!-- Button trigger modal -->
-        @if(count($carts) > 0)
-        {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-top:40px;">
-            Checkout
-        </button> --}}
-
-        <a href="{{route('order')}}" class="btn btn-primary" style="margin-top:40px;">Checkout</a>
-        @endif
-    </div>
-
-    <div class="col-md-6">
+    <div class="total">
         <h4 class="total-price">Total Price: Rp.{{number_format($total)}}</h4>
     </div>
+
+    <div class="row pb-20">
+        <div class="col-md-6">
+            <a href="{{route('shop')}}" class="btn btn-primary" style="margin-top:10px;">< Lanjut Belanja</a>
+        </div>
+        <div class="col-md-6 text-right">
+            <a href="{{route('order')}}" class="btn btn-primary" style="margin-top:10px;">Lanjut Pemesanan ></a>
+        </div>
+    </div>
+</div>
+@endif
 </div>
 
+<footer class="footer-distributed" style="margin-top:20px;">
+    <div class="footer-right">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-gitlab"></i></a>
+    </div>
+    <div class="footer-left">
+        <p class="footer-links">
+            <a class="link-1" href="#">HOME</a>
+            <a href="#">SHOP</a>
+            <a href="#">ABOUT</a>
+            <a href="#">FAQ</a>
+        </p>
+        <p> &copy; 2021</p>
+    </div>
 
-</div>
+</footer>
 
 
 

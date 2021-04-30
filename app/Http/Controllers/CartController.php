@@ -25,7 +25,7 @@ class CartController extends Controller
     public function store(request $request)
     {
 
-        $duplicate = Cart::where('product_id',$request->product_id)->first();
+        $duplicate = Cart::where('user_id',Auth::user()->id)->where('product_id',$request->product_id)->first();
 
         if($duplicate)
         {

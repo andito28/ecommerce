@@ -66,17 +66,15 @@ Route::group(['middleware'=>['auth','checkrole:user']],function(){
 
     Route::patch('/cart/{id}','CartController@update')->name('cartupdate');
 
-    Route::post('/checkout','checkoutController@store')->name('checkout');
-
-    Route::get('/incheck','checkoutController@index')->name('incheck');
-
-    Route::get('/detail/{id}','checkoutController@transactions_detail')->name('detail');
-
     Route::get('/order','OrderController@index')->name('order');
+
+    Route::get('/orderList','OrderController@orderList')->name('orderList');
 
     Route::post('/order/store','OrderController@store')->name('orderStore');
 
     Route::get('/detailOrder/{id}','OrderController@detail')->name('detailOrder');
+
+    Route::post('/paymentConfirmation','payment_confirmationController@store')->name('paymentConfirmationStore');
 });
 
 
