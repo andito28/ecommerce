@@ -14,7 +14,7 @@
 
     <div class="card">
         <div class="card-header text-center">
-         <h5>Order Details</h5>
+         <h5>Detail Pesanan</h5>
         </div>
         <div class="card-body">
 

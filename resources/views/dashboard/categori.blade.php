@@ -19,7 +19,8 @@
 
             <div class="card-body">
 
-                <table class="table table-bordered dt-responsive" id="table-categori">
+                <div class="table-responsive">
+                <table class="table table-bordered dt-responsive" id="table-categori" style="width:100%">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -28,7 +29,7 @@
                         </tr>
                     </thead>
                 </table>
-
+                </div>
             </div>
         </div>
 
@@ -105,6 +106,7 @@
             $('#table-categori').DataTable({
                 processing: true,
                 serverSide: true,
+                responsive: true,
                 ajax: "{{route('dataCategori')}}",
                 columns : [
                     {data: 'DT_RowIndex',name: 'DT_RowIndex'},

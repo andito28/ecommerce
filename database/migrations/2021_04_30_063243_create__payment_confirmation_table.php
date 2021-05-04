@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePaymentConfirmationsTable extends Migration
+class CreatePaymentConfirmationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,6 +16,7 @@ class CreatePaymentConfirmationsTable extends Migration
         Schema::create('payment_confirmations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('order_id')->constrained('orders');
             $table->string('no_rekening');
             $table->string('nama_account');
             $table->date('tanggal_pembayaran');

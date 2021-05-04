@@ -23,11 +23,15 @@ body {
 
 .navbar-brand {
   font-family: "Helvetica", "sans-serif";
+  font-size: 20px;;
   font-weight: bold;
   font-style: italic;
   margin-left: 15px;
 }
 
+div#navbarTogglerDemo02 {
+    font-size: 16px;
+}
 .navbar-nav {
   margin-right: 3em;
 }
@@ -44,6 +48,8 @@ body {
 .navbar-dark .navbar-nav .nav-link:hover {
   color: white !important;
 }
+
+
 
 .underline {
   display: inline-block;

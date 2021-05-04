@@ -54,6 +54,10 @@ Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 
     Route::get('/deleteCategori/{id}','CategoriController@destroy');
 
+    Route::get('/users','UsersController@index')->name('users');
+
+    Route::get('/dataUsers','UsersController@dataUsers')->name('dataUsers');
+
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){

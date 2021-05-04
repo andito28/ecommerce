@@ -27,6 +27,7 @@ Dashboard | Product
 
             <div class="card-body">
 
+                <div class="table-responsive">
                 <table class="table table-bordered dt-responsive" id="table-product">
                     <thead>
                         <tr>
@@ -39,6 +40,7 @@ Dashboard | Product
                         </tr>
                     </thead>
                 </table>
+            </div>
 
                 {{-- modal add and edit --}}
                 <div class="modal fade" id="tambah-edit-modal" aria-hidden="true">
@@ -167,6 +169,7 @@ Dashboard | Product
                 $('#table-product').DataTable({
                     processing: true,
                     serverSide: true,
+                    responsive: true,
                     ajax: '{{route("dataProduct")}}',
                     columns: [
                         {data: 'DT_RowIndex',name: 'DT_RowIndex'},

@@ -17,6 +17,7 @@ class Payment_confirmationController extends Controller
 
             $payment = new Payment_confirmation;
             $payment->user_id = Auth::user()->id;
+            $payment->order_id = $request->order_id;
             $payment->no_rekening = $request->noRek;
             $payment->nama_account = $request->name;
             $payment->tanggal_pembayaran = $request->tgl;
