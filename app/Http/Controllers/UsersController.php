@@ -19,6 +19,6 @@ class UsersController extends Controller
 
     public function dataUsers(){
         $users = User::all();
-        return datatables::of($users)->make(true);
+        return datatables::of($users)->addIndexColumn()->make(true);
     }
 }

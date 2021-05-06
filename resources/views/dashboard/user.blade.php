@@ -8,7 +8,7 @@
 @section('content')
 <div class="col col-md-12">
     <div class="card card-shadow">
-        <div class="card-header">HALAMAN PRODUCT</div>
+        <div class="card-header">HALAMAN USERS</div>
 
         {{-- <div class="card-header bg-white pb-10 pt-30">
             <a href="javascript:void(0)" class="btn btn-primary btn-sm" id="tombol-tambah"> Add Product</a>
@@ -22,8 +22,8 @@
                     <tr>
                         <th>No</th>
                         <th>Name</th>
-                        {{-- <th>Address</th>
-                        <th>Phone</th> --}}
+                        <th>Address</th>
+                        <th>Phone</th>
                     </tr>
                 </thead>
             </table>
@@ -65,7 +65,9 @@
             ajax : "{{route('dataUsers')}}",
             columns : [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-                {data : name , name :name}
+                {data: 'name' , name: 'name'},
+                {data: 'address' , name: 'address'},
+                {data: 'phone' , name: 'phone'}
 
             ]
         })

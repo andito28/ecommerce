@@ -146,12 +146,14 @@
                 </tr>
           </table>
 
+            @if ($order->status == 0 || $order->status == 3)
+            <div class="alert alert-success" role="alert">
+                <p>Silahkan Lakukan Pembayaran Ke Bank ABC</p>
+                <p class="mb-0">Nomor Account : 1234-567-9810-1112 (Andito)</p>
+                <p>Setelah Melakukan pembayaran, Silahkan lakukan konfirmasi pembayaran <a href="#" data-toggle="modal" data-target="#exampleModal" class="alert-link" style="color:blue">Disini</a></p>
+            </div>
+            @endif
 
-          <div class="alert alert-success" role="alert">
-            <p>Silahkan Lakukan Pembayaran Ke Bank ABC</p>
-            <p class="mb-0">Nomor Account : 1234-567-9810-1112 (Andito)</p>
-            <p>Setelah Melakukan pembayaran, Silahkan lakukan konfirmasi pembayaran <a href="#" data-toggle="modal" data-target="#exampleModal" class="alert-link" style="color:blue">Disini</a></p>
-          </div>
         </div>
       </div>
 </div>

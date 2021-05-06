@@ -58,6 +58,16 @@ Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 
     Route::get('/dataUsers','UsersController@dataUsers')->name('dataUsers');
 
+    Route::get('/orderStatus','OrderController@order')->name('orderStatus');
+
+    Route::get('/dataOrder','OrderController@dataOrder')->name('dataOrder');
+
+    Route::get('/editStatusPembayaran/{id}','OrderController@edit');
+
+    Route::post('/updateStatus','OrderController@update')->name('updateStatus');
+
+    Route::get('/detailPesanan/{id}','OrderController@detailPesanan');
+
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){

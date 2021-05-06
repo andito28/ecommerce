@@ -32,7 +32,7 @@
                     @php
                         $orderStatus[0] = "Menunggu pembayaran";
                         $orderStatus[1] = "Pembayaran sedang di validasi";
-                        $orderStatus[2] = "Lunas";
+                        $orderStatus[2] = "Pembayaran Lunas";
                         $orderStatus[3] = "Pembayaran di tolak";
                     @endphp
 
