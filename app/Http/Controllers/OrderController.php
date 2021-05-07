@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\Order_detail;
 use App\Cart;
+use App\Payment_confirmation;
 use Auth;
 use Yajra\Datatables\Datatables;
 
@@ -135,11 +136,14 @@ class OrderController extends Controller
 
     public function detailPesanan($id){
 
-        $detailOrder = Order_detail::where('order_id',$id)->first();
-        $order = Order::where('id',$id)->first();
+        $payment = Payment_confirmation::where('order_id',$id)->first();
+        $detailOrder = Order_detail::with('Product')->where('order_id',$id)->get();
+        $order = Order::with('User')->where('id',$id)->first();
+
         return response()->json([
             'detail_order' => $detailOrder,
-            'order' => $order
+            'order' => $order,
+            'payment' => $payment
         ]);
     }
 

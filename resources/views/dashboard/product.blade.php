@@ -46,9 +46,9 @@ Dashboard | Product
                 <div class="modal fade" id="tambah-edit-modal" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modal-judul"></h5>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <div class="modal-header bg-primary">
+                                <h5 class="modal-title text-white" id="modal-judul"></h5>
+                                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
                                 <form id="form-tambah-edit" name="form-tambah-edit" class="form-horizontal">
@@ -139,11 +139,11 @@ Dashboard | Product
 
                 {{-- modal delete --}}
                 <div class="modal fade" tabindex="-1" role="dialog" id="konfirmasi-modal" data-backdrop="false">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog " role="document">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">PERHATIAN</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <div class="modal-header bg-danger">
+                                <h5 class="modal-title text-white">PERHATIAN</h5>
+                                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -275,6 +275,7 @@ Dashboard | Product
 
                 $.get('editProduct/' + data_id, function(data){
                     $('#tambah-edit-modal').modal('show');
+                    $('#modal-judul').html('Edit Product')
                     $('#tombol-simpan').html('Update');
                     $('#id').val(data.id);
                     $('#nameProduct').val(data.name);

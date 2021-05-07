@@ -40,9 +40,9 @@
      <div class="modal fade" id="tambah-edit-modal" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal-judul"></h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title text-white" id="modal-judul"></h5>
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form id="form-tambah-edit" name="form-tambah-edit" class="form-horizontal">
@@ -81,9 +81,9 @@
        <div class="modal fade" tabindex="-1" role="dialog" id="konfirmasi-modal" data-backdrop="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">PERHATIAN</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-header bg-danger">
+                    <h5 class="modal-title text-white">PERHATIAN</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -120,6 +120,7 @@
         $('#tombol-tambah').on('click',function(){
             $('#id').val("");
             $('#form-tambah-edit').trigger('reset');
+            $('#modal-judul').html('Tambah Categori');
             $('#tambah-edit-modal').modal('show');
         });
 
@@ -131,6 +132,7 @@
 
             $.get('editCategori/' + id ,function(data){
                 $('#tambah-edit-modal').modal('show');
+                $('#modal-judul').html('Edit Categori')
                 $('#categori').val(data.name);
                 $('#id').val(data.id);
                 $('#categoriError').text('');

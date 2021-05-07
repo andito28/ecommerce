@@ -85,33 +85,102 @@
                             </button>
                         </div>
                           <div class="modal-body">
-                              <span id="nama"></span>
-                              <span id="product"></span>
+
+                            <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                <table cellpadding="2">
+                                    <tr>
+                                        <td>Nomor Faktur</td>
+                                        <td>:</td>
+                                        <td id="no"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Nama Pemesan</td>
+                                        <td>:</td>
+                                        <td id ="namaPemesan"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Nama Penerima</td>
+                                        <td>:</td>
+                                        <td id="namaPenerima"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Alamat Pengiriman</td>
+                                        <td>:</td>
+                                        <td id="alamat"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Nomor telepon</td>
+                                        <td>:</td>
+                                        <td id="nomor"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Tanggal Pemesanan</td>
+                                        <td>:</td>
+                                        <td id="tgl"></td>
+                                    </tr>
+                            </table>
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-danger">
+                                <div class="card-header text-center bg-success">
+                                    Konfirmasi Pembayaran
+                                </div>
+                                <div class="card-footer">
+                                    <table id="table-payment">
+                                        <tr>
+                                            <td>Nomor Rekening</td>
+                                            <td>:</td>
+                                            <td id="norek"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nama Account</td>
+                                            <td>:</td>
+                                            <td id="account"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tanggal Pembayaran</td>
+                                            <td>:</td>
+                                            <td id="tglPembayaran"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                          <table class="table" id="table-detail">
+                            <thead>
+                              <tr>
+                                  <th>Nama Product</th>
+                                  <th>Qty</th>
+                                  <th>Harga Satuan</th>
+                                  <th>Subtotal</th>
+                              </tr>
+                            </thead>
+
+                            <tbody></tbody>
+                          </table>
+
+                            {{-- @if ($order->status == 0 || $order->status == 3)
+                            <div class="alert alert-success" role="alert">
+                                <p>Silahkan Lakukan Pembayaran Ke Bank ABC</p>
+                                <p class="mb-0">Nomor Account : 1234-567-9810-1112 (Andito)</p>
+                                <p>Setelah Melakukan pembayaran, Silahkan lakukan konfirmasi pembayaran <a href="#" data-toggle="modal" data-target="#exampleModal" class="alert-link" style="color:blue">Disini</a></p>
+                            </div>
+                            @endif --}}
                           </div>
                 </div>
             </div>
-            {{-- end modal detail--}}
-             {{-- modal delete --}}
-            {{-- <div class="modal fade" tabindex="-1" role="dialog" id="konfirmasi-modal-delete" data-backdrop="false">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">PERHATIAN</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Hapus Product, apakah anda yakin?</p>
-                        </div>
-                        <div class="modal-footer bg-whitesmoke br">
-                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-danger btn-sm" name="tombol-hapus" id="tombol-hapus">Hapus Data</button>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            {{-- end modal delete --}}
+
+
 
                 </div>
             </div>
@@ -185,17 +254,78 @@
     });
 
 
+
+
+
     $('body').on('click','.detail',function(){
 
         let dataId = $(this).attr('id');
 
+
         $.get('detailPesanan/'+dataId,function(data){
 
-            console.log(data)
+            $("#table-detail tbody").empty();
+            $('#konfirmasi-modal-detail').modal('show');
 
-            // $('#konfirmasi-modal-detail').modal('show');
-            // $('#nama').text(data.order.name);
-            // $('#product').text(data.deatail_order.product_id);
+
+            let total = 0;
+
+            $.each(data.detail_order, function(index) {
+
+                var product_name = data.detail_order[index].product.name;
+                var qty = data.detail_order[index].qty;
+                var price = data.detail_order[index].product.price;
+                var subTotal = (qty * price );
+
+                var tr_1 = "<tr>" +
+                   "<td '>" + product_name + "</td>" +
+                   "<td '>" + qty + "</td>" +
+                   "<td '>" + price + "</td>" +
+                   "<td '>" + subTotal + "</td>" +
+                 "</tr>";
+                 $("#table-detail tbody").append(tr_1);
+
+                    total = total + subTotal;
+                // console.log(data.detail_order[index])
+
+        });
+
+        var tr_2 = "<tr>" +
+                   "<td>" + " "+ "</td>" +
+                   "<td>" + " "+ "</td>" +
+                   "<td>" +  "Total  :" + "</td>" +
+                   "<td>" + total + "</td>" +
+                 "</tr>";
+                 $("#table-detail tbody").append(tr_2);
+
+                $('#no').html(data.order.id);
+                $('#namaPemesan').html(data.order.user.name);
+                $('#namaPenerima').html(data.order.recipient_name);
+                $('#alamat').html(data.order.recipient_address);
+                $('#nomor').html(data.order.number_tlp);
+                $('#tgl').html(data.order.created_at);
+
+                $('#tgl').html(data.order.created_at);
+                $('#tgl').html(data.order.created_at);
+
+
+                if(data.payment == null){
+                    // $('#table-payment').empty();
+                   let h3 = document.createElement('h3');
+                   h3.className = "text-danger";
+                   h3.innerHTML = "Belum melakukan pembayaran";
+
+                   $('.card-footer').append(h3);
+
+                }else{
+
+                $('#tglPembayaran').html(data.payment.tanggal_pembayaran);
+
+                }
+
+                console.log(data)
+
+
         })
 
     })

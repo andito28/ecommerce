@@ -12,8 +12,8 @@
 <div class="container">
 
     <div class="card">
-        <div class="card-header text-center">
-            <h5>List Pesanan</h5>
+        <div class="card-header text-center bg-primary">
+            <h5 class="text-white">List Pesanan</h5>
            </div>
 
         <div class="card-body">

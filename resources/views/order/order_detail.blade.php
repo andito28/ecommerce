@@ -13,8 +13,8 @@
 <div class="container">
 
     <div class="card">
-        <div class="card-header text-center">
-         <h5>Detail Pesanan</h5>
+        <div class="card-header text-center bg-primary">
+         <h5 class="text-white">Detail Pesanan</h5>
         </div>
         <div class="card-body">
 
@@ -22,9 +22,9 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Pembayaran</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-header bg-primary">
+            <h5 class="modal-title text=wite" id="exampleModalLabel">Konfirmasi Pembayaran</h5>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
