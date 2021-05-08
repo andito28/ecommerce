@@ -19,17 +19,16 @@
     <link rel="stylesheet" href="{{asset('material/assets/css/site.min.css')}}">
     {{-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> --}}
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
-       <!-- jQuery -->
-       <script src="//code.jquery.com/jquery.js"></script>
-       <!-- DataTables -->
-       <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <!-- jQuery -->
+    <script src="{{asset('material/global/vendor/jquery/jquery.js')}}"></script>
+    {{-- <script src="//code.jquery.com/jquery.js"></script> --}}
+    <!-- DataTables -->
+    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 
        {{-- plugin alert izitoas --}}
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css" integrity="sha256-pODNVtK3uOhL8FUNWWvFQK0QoQoV3YA9wGGng6mbZ0E=" crossorigin="anonymous" />
+
        <link rel="stylesheet" href=" {{asset('material/global/vendor/animsition/animsition.css')}}">
-
-
-
 
     <!-- Fonts -->
     <link rel="stylesheet" href="{{asset('material/global/fonts/material-design/material-design.min.css')}}">
@@ -168,7 +167,8 @@
         </div>
         <!-- End Site Navbar Seach -->
       </div>
-    </nav>    <div class="site-menubar">
+    </nav>
+    <div class="site-menubar">
       <div class="site-menubar-body">
         <div>
           <div>
@@ -250,11 +250,11 @@
     <script src="{{asset('material/global/vendor/popper-js/umd/popper.min.js')}}"></script>
     <script src="{{asset('material/global/vendor/bootstrap/bootstrap.js')}}"></script>
     <script src="{{asset('material/global/vendor/animsition/animsition.js')}}"></script>
-    <script src="{{asset('material/global/vendor/mousewheel/jquery.mousewheel.js')}}"></script>
+    {{-- <script src="{{asset('material/global/vendor/mousewheel/jquery.mousewheel.js')}}"></script>
     <script src="{{asset('material/global/vendor/asscrollbar/jquery-asScrollbar.js')}}"></script>
     <script src="{{asset('material/global/vendor/asscrollable/jquery-asScrollable.js')}}"></script>
     <script src="{{asset('material/global/vendor/ashoverscroll/jquery-asHoverScroll.js')}}"></script>
-    <script src="{{asset('material/global/vendor/waves/waves.js')}}"></script>
+    <script src="{{asset('material/global/vendor/waves/waves.js')}}"></script> --}}
 
     <!-- Plugins -->
 
@@ -265,11 +265,11 @@
     <script src="{{asset('material/global/js/Base.js')}}"></script>
     <script src="{{asset('material/global/js/Config.js')}}"></script>
 
-    <script src="{{asset('material/assets/js/Section/Menubar.js')}}"></script>
+    {{-- <script src="{{asset('material/assets/js/Section/Menubar.js')}}"></script>
     <script src="{{asset('material/assets/js/Section/GridMenu.js')}}"></script>
     <script src="{{asset('material/assets/js/Section/Sidebar.js')}}"></script>
     <script src="{{asset('material/assets/js/Section/PageAside.js')}}"></script>
-    <script src="{{asset('material/assets/js/Plugin/menu.js')}}"></script>
+    <script src="{{asset('material/assets/js/Plugin/menu.js')}}"></script> --}}
 
     <script src="{{asset('material/global/js/config/colors.js')}}"></script>
     <script src="{{asset('material/assets/js/config/tour.js')}}"></script>

@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1"><h6>Alamat Pengiriman</h6> </label>
-                  <textarea name="recipient_address" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea name="recipient_address" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Alamat Lengkap"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm">Checkout</button>
               </form>

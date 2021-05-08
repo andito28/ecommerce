@@ -98,9 +98,9 @@ class OrderController extends Controller
             return $data->status;
         })
         ->addColumn('action',function($data){
-            $button = "<a href='javascript:void(0)' class='btn btn-success btn-sm update' id='$data->id'> Update Status </a>";
-            $button .= '&nbsp;&nbsp;';
-            $button .=  "<a href='javascript:void(0)' class='btn btn-primary btn-sm detail' id='$data->id'> Detail Pesanan </a>";
+            // $button = "<a href='javascript:void(0)' class='btn btn-success btn-sm update' id='$data->id'> Update Status </a>";
+            // $button .= '&nbsp;&nbsp;';
+            $button =  "<a href='javascript:void(0)' class='btn btn-primary btn-sm detail' id='$data->id'> Detail Pesanan </a>";
             return $button;
         })
 
@@ -114,13 +114,13 @@ class OrderController extends Controller
     }
 
 
-    public function edit($id){
+    // public function edit($id){
 
-        $post = Order::where('id',$id)->first();
-        return response()->json($post);
+    //     $post = Order::where('id',$id)->first();
+    //     return response()->json($post);
 
 
-    }
+    // }
 
 
     public function update(request $request){

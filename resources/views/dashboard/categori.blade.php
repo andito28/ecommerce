@@ -9,8 +9,8 @@
 
         <div class="card card-shadow">
 
-            <div class="card-header">
-                <div class="card-title">HALAMAN CATEGORI</div>
+            <div class="card-header bg-primary text-white">
+                HALAMAN CATEGORI
             </div>
 
             <div class="card-header bg-white pb-10 pt-30">

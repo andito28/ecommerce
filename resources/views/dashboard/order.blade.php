@@ -8,7 +8,7 @@
 @section('content')
 <div class="col col-md-12">
     <div class="card card-shadow">
-        <div class="card-header">HALAMAN ORDERS</div>
+        <div class="card-header bg-primary text-white">HALAMAN ORDERS</div>
 
         {{-- <div class="card-header bg-white pb-10 pt-30">
             <a href="javascript:void(0)" class="btn btn-primary btn-sm" id="tombol-tambah"> Add Product</a>
@@ -40,7 +40,7 @@
             $orderStatus[3] = "Pembayaran di tolak";
             @endphp
 
-            <div class="modal fade"  id="konfirmasi-modal-update"  aria-hidden="true">
+            {{-- <div class="modal fade"  id="konfirmasi-modal-update"  aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header bg-primary">
@@ -71,12 +71,12 @@
                     </form>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- end modal update --}}
 
              {{-- modal detail --}}
              <div class="modal fade"  id="konfirmasi-modal-detail" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header bg-primary">
                             <h5 class="modal-title text-white"><b>Detail Pesanan</b></h5>
@@ -84,12 +84,12 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                          <div class="modal-body">
+                          <div class="modal-body pb-0">
 
                             <div class="row">
                             <div class="col-md-6">
                                 <div class="card">
-                                <table cellpadding="2">
+                                <table cellpadding="5">
                                     <tr>
                                         <td>Nomor Faktur</td>
                                         <td>:</td>
@@ -133,8 +133,10 @@
                                 <div class="card-header text-center bg-success">
                                     Konfirmasi Pembayaran
                                 </div>
-                                <div class="card-footer">
-                                    <table id="table-payment">
+                                <div class="card-footer pt-0">
+
+                                    <span id="confirm"></span>
+                                    <table id="table-payment" cellpadding="2">
                                         <tr>
                                             <td>Nomor Rekening</td>
                                             <td>:</td>
@@ -152,11 +154,31 @@
                                         </tr>
                                     </table>
                                 </div>
+                                <form id="update-status">
+                                    @csrf
+                                    <div class="form-group">
+                                      <input type="hidden" class="form-control" id="id" name="id" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Status</label>
+                                        <select class="form-control" id="status" name="status">
+                                            @foreach ($orderStatus as $key => $value)
+                                            <option value="{{$key}}">{{$value}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="modal-footer bg-whitesmoke pb-0">
+                                        <button type="submit" class="btn btn-primary btn-sm">Update Status</button>
+                                    </div>
+                            </div>
+
+                        </form>
                             </div>
                         </div>
                     </div>
 
-                          <table class="table" id="table-detail">
+                    <div class="col-md-12">
+                        <table class="table" id="table-detail">
                             <thead>
                               <tr>
                                   <th>Nama Product</th>
@@ -168,6 +190,8 @@
 
                             <tbody></tbody>
                           </table>
+                          <button class="btn btn-primary btn-sm mb-15 pr-30 pl-30">Cetak</button>
+                    </div>
 
                             {{-- @if ($order->status == 0 || $order->status == 3)
                             <div class="alert alert-success" role="alert">
@@ -205,17 +229,17 @@
     })
 
 
-    $('body').on('click','.update',function(){
-        const id = $(this).attr('id');
+    // $('body').on('click','.update',function(){
+    //     const id = $(this).attr('id');
 
-        $.get('editStatusPembayaran/' + id, function(data){
+    //     $.get('editStatusPembayaran/' + id, function(data){
 
 
-                    $('#konfirmasi-modal-update').modal('show');
-                    $('#id').val(data.id);
-                    $("#status").val(data.status)
-                })
-    });
+    //                 $('#konfirmasi-modal-update').modal('show');
+    //                 $('#id').val(data.id);
+    //                 $("#status").val(data.status)
+    //             })
+    // });
 
 
     $('#update-status').on('submit',function(e){
@@ -232,8 +256,6 @@
             contentType : false,
 
             success:function(){
-                        $('#update-status').trigger("reset");
-                        $('#konfirmasi-modal-update').modal('hide');
                         var oTable = $('#table-order')
                         .dataTable();
                         oTable.fnDraw(false);
@@ -286,7 +308,6 @@
                  $("#table-detail tbody").append(tr_1);
 
                     total = total + subTotal;
-                // console.log(data.detail_order[index])
 
         });
 
@@ -310,21 +331,27 @@
 
 
                 if(data.payment == null){
-                    // $('#table-payment').empty();
+                  $('#table-payment').hide();
                    let h3 = document.createElement('h3');
-                   h3.className = "text-danger";
+                   h3.className = "text-danger text-center";
                    h3.innerHTML = "Belum melakukan pembayaran";
 
-                   $('.card-footer').append(h3);
+                   $('#confirm').html(h3);
+
 
                 }else{
-
+                $('#table-payment').show();
+                $('#norek').html(data.payment.no_rekening);
+                $('#account').html(data.payment.nama_account);
                 $('#tglPembayaran').html(data.payment.tanggal_pembayaran);
+                $('#confirm').html("");
 
                 }
 
-                console.log(data)
+                $('#id').val(data.order.id);
+                $("#status").val(data.order.status)
 
+                console.log(data)
 
         })
 

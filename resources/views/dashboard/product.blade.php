@@ -18,8 +18,8 @@ Dashboard | Product
     $categori = App\Categori::all()
 @endphp
     <div class="col col-md-12">
-        <div class="card card-shadow">
-            <div class="card-header">HALAMAN PRODUCT</div>
+        <div class="card card-shadow ">
+            <div class="card-header bg-primary text-white">HALAMAN PRODUCT</div>
 
             <div class="card-header bg-white pb-10 pt-30">
                 <a href="javascript:void(0)" class="btn btn-primary btn-sm" id="tombol-tambah"> Add Product</a>
@@ -111,6 +111,35 @@ Dashboard | Product
                                                 </div>
                                             </div>
 
+                                            {{-- <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="categori" class="col-sm-12 control-label">Categori</label>
+                                                        <div class="col-sm-12 input-group-append">
+                                                        <select class="form-control" id="exampleFormControlSelect1" name="categori_id">
+                                                        @foreach($categori as $ctg)
+                                                            <option value="{{$ctg->id}}">{{$ctg->name}}</option>
+                                                        @endforeach
+                                                        </select>
+                                                        <span id="categoriError" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                   <div class="form-group">
+                                                        <label for="gambar" class="col-sm-12 control-label">Image</label>
+                                                        <div class="input-group input-group-file" data-plugin="inputGroupFile">
+                                                            <div class="col-sm-3 input-group-append">
+                                                            <input type="file" name="image">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12 input-group-append">
+                                                        <span id="imageError" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> --}}
                                             <div class="form-group">
                                                 <label for="title" class="col-sm-12 control-label">Desc</label>
                                                 <div class="col-sm-12">

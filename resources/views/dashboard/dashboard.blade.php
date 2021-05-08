@@ -9,13 +9,13 @@
 
         <div class="card card-shadow">
 
-            <div class="card-header">
-                <div class="card-title">HALAMAN DASHBOARD</div>
+            <div class="card-header bg-primary text-white">
+                HALAMAN DASHBOARD
             </div>
 
             <div class="card-body">
                 <p class="text">ini adalah halaman dashboard</p>
-            </div>
+             </div>
         </div>
 
     </div>
