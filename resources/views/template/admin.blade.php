@@ -1,4 +1,9 @@
+@php
 
+
+$tmp = \App\Order::where('status',1);
+
+@endphp
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="en">
   <head>
@@ -213,7 +218,8 @@
               <li class="site-menu-item has-sub">
                 <a href="{{route('orderStatus')}}">
                         <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
-                        <span class="site-menu-title">Orders</span>
+                        <span class="site-menu-title">Orders <span class="badge badge-danger">{{$tmp->count()}}</span>
+                          </button></span>
                 </a>
               </li>
 

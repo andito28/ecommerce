@@ -62,7 +62,7 @@ body {
     left: 50%;
     right: 50%;
     bottom: 0;
-    background: #ff4f77;
+    background: #3f51b1;
     height: 2px;
     -webkit-transition-property: left, right;
     transition-property: left, right;
@@ -111,7 +111,7 @@ body {
 .btn-topup{
     display: block;
     margin: auto;
-    background: #ff4f77;
+    background: #3f51b1;
     color: white;
 }
 

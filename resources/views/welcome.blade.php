@@ -69,13 +69,14 @@
             </div>
         </nav>
         @endguest
-	<div class="content-user">
+	{{-- <div class="content-user">
 		<h1 class="title">E - Commerce</h1>
 		<h3 class="under-title">The Best Place for Any Solutions</h3>
-	</div>
+	</div> --}}
 	<div class="container">
 		<div class="products">
-			<h1 id="featured">Featured Products</h1>
+			<h2 id="featured">Featured Products</h2>
+            <hr>
 			<div class="row list-product">
 
                    @foreach($products as $product)
@@ -92,7 +93,7 @@
 
 			</div>
 		</div>
-		<a href="/shop" class="more">View More Products ></a>
+		<a href="/shop" class="more">Lihat Produk lainnya></a>
 	</div>
 
 	<footer class="footer-distributed">

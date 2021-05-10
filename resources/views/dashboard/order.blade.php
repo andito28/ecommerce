@@ -256,6 +256,7 @@
             contentType : false,
 
             success:function(){
+                        $('#konfirmasi-modal-detail').modal('hide');
                         var oTable = $('#table-order')
                         .dataTable();
                         oTable.fnDraw(false);

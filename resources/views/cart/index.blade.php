@@ -46,7 +46,7 @@
 </div>
 @else
 <div>
-    <h3>{{$carts->count()}} Item in your cart</h3>
+    <h3>{{$carts->count()}} Item di Keranjang belanjamu</h3>
 </div>
 @foreach($carts as $cart)
 <div class="cart pb-0">

@@ -63,7 +63,7 @@ body {
   left: 50%;
   right: 50%;
   bottom: 0;
-  background: #ff4f77;
+  background: #3f51b1;
   height: 2px;
   -webkit-transition-property: left, right;
   transition-property: left, right;
@@ -96,8 +96,8 @@ body {
 
 hr {
   margin: 0;
-  border: 1px solid #ff4f77;
-  background: #ff4f77;
+  border: 1px solid #3f51b1;
+  background: #3f51b1;
 }
 
 .title-name {
@@ -203,16 +203,16 @@ p {
   transition: all 0.25s;
 }
 
-.footer-distributed .footer-right a:hover {
+/* .footer-distributed .footer-right a:hover {
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
 }
 
 .footer-distributed p.footer-links a:hover {
   text-decoration: underline;
-}
+} */
 
-@media only screen and (max-width: 992px) {
+/* @media only screen and (max-width: 992px) {
   .more {
     width: 30% !important;
   }
@@ -232,4 +232,4 @@ p {
       text-align: left;
     }
   }
-}
+} */
