@@ -11,6 +11,10 @@ body {
   padding: 0;
 }
 
+input.btn.btn-primary {
+    background: #3f51b1;
+}
+
 .navbar {
   padding-bottom: 15px;
 }
@@ -151,9 +155,9 @@ p {
   font-size: 14px;
   margin: 0;
 }
-/* Footer links */
 
-.footer-distributed p.footer-links {
+
+/* .footer-distributed p.footer-links {
   font-size: 18px;
   font-weight: bold;
   margin: 0 0 10px;
@@ -203,7 +207,7 @@ p {
   transition: all 0.25s;
 }
 
-/* .footer-distributed .footer-right a:hover {
+.footer-distributed .footer-right a:hover {
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
 }

@@ -40,13 +40,14 @@
 <div class="col-lg-12 item mb-5 pt-10">
     <div class="card text-center">
         <div class="card-body" style="padding-bottom:50px;padding-top:50px;">
-            <h3>There are no items in the cart </h3>
+            <h3>Tidak ada item dalam keranjang </h3>
         </div>
     </div>
 </div>
 @else
 <div>
-    <h3>{{$carts->count()}} Item di Keranjang belanjamu</h3>
+    <h3>{{$carts->count()}} Item di Keranjang </h3>
+    <hr>
 </div>
 @foreach($carts as $cart)
 <div class="cart pb-0">
@@ -107,10 +108,10 @@
 
     <div class="row pb-20">
         <div class="col-md-6">
-            <a href="{{route('shop')}}" class="btn btn-primary" style="margin-top:10px;">< Lanjut Belanja</a>
+            <a href="{{route('shop')}}" class="btn btn-primary" style="margin-top:20px;">< Lanjut Belanja</a>
         </div>
         <div class="col-md-6 text-right">
-            <a href="{{route('order')}}" class="btn btn-primary" style="margin-top:10px;">Lanjut Pemesanan ></a>
+            <a href="{{route('order')}}" class="btn btn-primary" style="margin-top:20px;">Lanjut Pemesanan ></a>
         </div>
     </div>
 </div>

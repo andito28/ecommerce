@@ -11,11 +11,9 @@
 @section('content')
 <div class="container">
 
+    <h3 id="pesanan">List Pesanan</h3>
+    <hr>
     <div class="card">
-        <div class="card-header text-center bg-primary">
-            <h5 class="text-white">List Pesanan</h5>
-           </div>
-
         <div class="card-body">
             <div class="table-responsive-sm">
             <table class="table">
@@ -63,7 +61,7 @@
                         </td>
                         @endif
 
-                        <td><a class="btn btn-info btn-sm" href="{{route('detailOrder',$order->id)}}">Detail Pesanan</a></td>
+                        <td><a class="btn btn-primary btn-sm" href="{{route('detailOrder',$order->id)}}">Detail Pesanan</a></td>
                     </tr>
                     @endforeach
                 </tbody>

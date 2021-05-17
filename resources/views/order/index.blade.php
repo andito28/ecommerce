@@ -10,25 +10,26 @@
 
 @section('content')
 <div class="container">
+    <h3 id="pesanan">Pesan</h3>
+    <hr>
     <div class="row">
-
         <div class="col-md-6">
             <div class="card p-4">
             <form action="{{route('orderStore')}}" method="POST">
                 @csrf
                 <div class="form-group">
                   <label for="exampleFormControlInput1"><h6>Nama Penerima</h6></label>
-                  <input type="text" name="recipient_name" class="form-control" id="exampleFormControlInput1" placeholder="nama penerima">
+                  <input type="text" name="recipient_name" class="form-control" id="exampleFormControlInput1" placeholder="nama penerima" required>
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlSelect1"><h6>Nomor telepon / WA</h6> </label>
-                  <input type="number" name="number_tlp" class="form-control" id="exampleFormControlInput1" placeholder="nomor telepon">
+                  <input type="number" name="number_tlp" class="form-control" id="exampleFormControlInput1" placeholder="nomor telepon" required>
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1"><h6>Alamat Pengiriman</h6> </label>
-                  <textarea name="recipient_address" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Alamat Lengkap"></textarea>
+                  <textarea name="recipient_address" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Alamat Lengkap" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm">Checkout</button>
+                <button type="submit" class="btn btn-primary btn-sm button-p">Checkout</button>
               </form>
             </div>
         </div>

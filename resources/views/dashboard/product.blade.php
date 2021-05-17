@@ -85,7 +85,7 @@ Dashboard | Product
                                             <div class="form-group">
                                                 <label for="categori" class="col-sm-12 control-label">Categori</label>
                                                 <div class="col-sm-12 input-group-append">
-                                                <select class="form-control" id="exampleFormControlSelect1" name="categori_id">
+                                                <select class="form-control" id="categori" name="categori_id">
                                                 @foreach($categori as $ctg)
                                                     <option value="{{$ctg->id}}">{{$ctg->name}}</option>
                                                 @endforeach
@@ -311,6 +311,7 @@ Dashboard | Product
                     $('#stock').val(data.stock);
                     $('#price').val(data.price);
                     $('#desc').val(data.desc);
+                    $('#categori').val(data.categori_id);
                     $('#nameError').text('');
                     $('#priceError').text('');
                     $('#stockError').text('');

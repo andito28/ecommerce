@@ -18,6 +18,12 @@ hr {
     height: 2px;
 }
 
+
+
+p.product-price {
+    font-size: 18px;
+}
+
 .navbar {
     padding-bottom: 15px;
 }

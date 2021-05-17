@@ -17,7 +17,7 @@ class ProductController extends Controller
 
     public function dataProduct(){
 
-        $dataProduct = Product::all();
+        $dataProduct = Product::orderBy('created_at','DESC')->get();
         return Datatables::of($dataProduct)
         ->addColumn('gambar',function($data){
 

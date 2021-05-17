@@ -9,7 +9,7 @@ class LandingPageController extends Controller
 {
     public function index()
     {
-        $products = Product::take(3)->inRandomOrder()->get();
+        $products = Product::take(6)->inRandomOrder()->get();
         return view('welcome',compact('products'));
     }
 }

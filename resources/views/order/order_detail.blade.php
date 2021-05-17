@@ -12,10 +12,9 @@
 
 <div class="container">
 
+    <h3 id="pesanan">Detail Pesanan</h3>
+    <hr>
     <div class="card">
-        <div class="card-header text-center bg-primary">
-         <h5 class="text-white">Detail Pesanan</h5>
-        </div>
         <div class="card-body">
 
     <!-- Modal -->

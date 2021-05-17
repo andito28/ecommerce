@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="category">
-          <h4 id="category-label">Categories</h4>
+          <h4 id="category-label">Kategori pilihan</h4>
           <ul class="list-group">
           <li class="list-group-item {{$id == null ?'active':''}}"><a href="{{route('shop')}}"> All</a></li>
             @foreach($categoris as $categori)
@@ -34,13 +34,13 @@
           <div class="item-list">
             <div class="row">
               <div class="col-md-6">
-                  <h4>Our Products</h4>
+                  <h4 class="mb-0">Produk kami</h4>
               </div>
 
               <div class="col-md-6">
                 <form action="{{route('shop')}}" class="form-inline ml-4">
-                    <input type="text" class="form-control" name="search" value="{{$search}}" placeholder="Searching . . . . .">
-                    <button class="btn btn-primary ">Search</button>
+                    <input type="text" class="form-control" name="search" value="{{$search}}" placeholder="Pencarian . . . . .">
+                    <button class="btn btn-primary ">C a r i</button>
                   </form>
               </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="col-lg-12 item mb-5 pt-10">
                 <div class="card">
                     <div class="card-body" style="padding-bottom:50px;padding-top:50px;">
-                        <h3>the item is not ready </h3>
+                        <h3>Produk Belum ada </h3>
                     </div>
                 </div>
             </div>

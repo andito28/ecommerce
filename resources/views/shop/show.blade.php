@@ -9,14 +9,14 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container" style="padding-bottom:120px;">
 <h2 class="title-name">{{$product->name}}</h2>
   <hr>
   <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
       <img src="{{asset('storage/product/'.$product->images)}}" alt="" height="200" width="200">
       </div>
-    <div class="col-md-4">
+    <div class="col-md-5">
       <h4 >Description</h4>
       <p>{{$product->desc}}</p>
     </div>

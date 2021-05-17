@@ -18,10 +18,6 @@ Route::get('/shop','ShopController@index')->name('shop');
 Route::get('/shop/show/{id}','ShopController@show')->name('shopsow');
 Route::get('/shop/kategori/{id}','ShopController@categori')->name('categoriId');
 
-Route::get('/testTemplate',function(){
-    return view('template.admin1');
-});
-
 Auth::routes();
 
 Route::group(['middleware'=>['auth','checkrole:user,admin']],function(){

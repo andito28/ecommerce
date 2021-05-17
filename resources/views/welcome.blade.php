@@ -47,7 +47,7 @@
                         <a class="nav-link underline" href="/cart"><i class="fa fa-shopping-cart"></i> Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline" href="/orderList"><i class=""></i>Order</a>
+                        <a class="nav-link underline" href="/orderList"><i class=""></i>Pesanan</a>
                     </li>
             <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -75,12 +75,13 @@
 	</div> --}}
 	<div class="container">
 		<div class="products">
-			<h2 id="featured">Featured Products</h2>
+			{{-- <h2 id="featured">Featured Products</h2> --}}
+            <img src="{{asset('images/banner.png')}}" alt="" id="featured" style="width:100%;height:300px;">
             <hr>
 			<div class="row list-product">
 
                    @foreach($products as $product)
-                   <div class="col-lg-4 col-md-6 ">
+                   <div class="col-lg-4 col-md-6 pb-2 pt-2 pl-3 pr-3">
                     <div class="card" style="padding-top:20px;">
                    <a href="">
 					<img src="{{asset('storage/product/'.$product->images)}}" alt="nopic" height="150" width="150" style="padding-bottom:20px;">
