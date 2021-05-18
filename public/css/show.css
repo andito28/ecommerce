@@ -127,7 +127,7 @@ p {
   margin-top: 30px;
   border: 0.5px solid grey;
   padding: 10px;
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
   text-align: center;
 }
 
@@ -216,7 +216,7 @@ p {
   text-decoration: underline;
 } */
 
-/* @media only screen and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   .more {
     width: 30% !important;
   }
@@ -235,5 +235,8 @@ p {
       background-color: inherit;
       text-align: left;
     }
+    .kartu{
+        margin-bottom: 100px;;
+    }
   }
-} */
+}

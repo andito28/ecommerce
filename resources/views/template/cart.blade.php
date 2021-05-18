@@ -45,7 +45,7 @@
                         <a class="nav-link underline" href="/cart"><i class="fa fa-shopping-cart"></i>Keranjang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline" href="/orderList"><i class=""></i>Pesanan</a>
+                        <a class="nav-link underline" href="/orderList"><i class="fa fa-list"></i>Pesanan</a>
                     </li>
             <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

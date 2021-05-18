@@ -1,4 +1,4 @@
-@extends('template.user')
+@extends('template.cart')
 
 @section('title')
     Order
@@ -11,10 +11,10 @@
 @section('content')
 <div class="container">
     <h3 id="pesanan">Pesan</h3>
-    <hr>
+    <hr class="mt-3 mb-3">
     <div class="row">
         <div class="col-md-6">
-            <div class="card p-4">
+            <div class="card p-4 shadow bg-white rounded ">
             <form action="{{route('orderStore')}}" method="POST">
                 @csrf
                 <div class="form-group">
@@ -35,7 +35,7 @@
         </div>
 
         <div class="col-md-6">
-            <div class="card">
+            <div class="card shadow bg-white rounded ">
                 <table class="table">
 
                     <tbody>
@@ -76,6 +76,29 @@
 
     </div>
 </div>
+
+<div class="wa">
+    <a href=" https://wa.me/6285298973249">
+        <img src="{{asset('images/wp.png')}}" alt="" style="width:80px;height:80px;">
+    </a>
+</div>
+
+<footer class="footer-distributed" style="margin-top:20px;">
+    <div class="footer-right">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-gitlab"></i></a>
+    </div>
+    <div class="footer-left">
+        <p class="footer-links">
+            <a class="link-1" href="#">HOME</a>
+            <a href="#">SHOP</a>
+            <a href="#">ABOUT</a>
+            <a href="#">FAQ</a>
+        </p>
+        <p> &copy; 2021</p>
+    </div>
 @endsection
 
 

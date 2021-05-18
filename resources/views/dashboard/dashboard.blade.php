@@ -16,7 +16,7 @@
                     <div class="grey-800 float-left py-10">
                       <i class="icon md-account grey-600 font-size-24 vertical-align-bottom mr-5"></i>USER
                     </div>
-                    <span class="float-right grey-700 font-size-30">1,253</span>
+                    <span class="float-right grey-700 font-size-30">{{$user}}</span>
                   </div>
                   <div class="mb-20 grey-500">
                     Jumlah User
@@ -33,7 +33,7 @@
                     <div class="grey-800 float-left py-10">
                       <i class="icon md-flash grey-600 font-size-24 vertical-align-bottom mr-5"></i>PRODUCT
                     </div>
-                    <span class="float-right grey-700 font-size-30">2,425</span>
+                    <span class="float-right grey-700 font-size-30">{{$product}}</span>
                   </div>
                   <div class="mb-20 grey-500">
                     Jumlah Product
@@ -50,7 +50,7 @@
                     <div class="grey-800 float-left py-10">
                       <i class="icon md-chart grey-600 font-size-24 vertical-align-bottom mr-5"></i>PESANAN
                     </div>
-                    <span class="float-right grey-700 font-size-30">1,864</span>
+                    <span class="float-right grey-700 font-size-30">{{$order}}</span>
                   </div>
                   <div class="mb-20 grey-500">
                     Jumlah Pesanan Hari ini
@@ -67,7 +67,7 @@
                     <div class="grey-800 float-left py-10">
                       <i class="icon md-view-list grey-600 font-size-24 vertical-align-bottom mr-5"></i>CATEGORI
                     </div>
-                    <span class="float-right grey-700 font-size-30">845</span>
+                    <span class="float-right grey-700 font-size-30">{{$categori}}</span>
                   </div>
                   <div class="mb-20 grey-500">
                     Jumlah Categori

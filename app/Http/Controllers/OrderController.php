@@ -26,7 +26,7 @@ class OrderController extends Controller
 
     public function orderList(){
 
-        $orders = Order::where('user_id',Auth::user()->id)->orderBy('created_at','DESC')->get();
+        $orders = Order::where('user_id',Auth::user()->id)->orderBy('created_at','DESC')->simplePaginate(10);
 
         return view('order.order_list',compact('orders'));
 
@@ -82,7 +82,7 @@ class OrderController extends Controller
 
     public function dataOrder(){
 
-        $order = Order::orderBy('created_at','DESC')->get();
+        $order = Order::orderBy('updated_at','DESC')->get();
         return Datatables::of($order)
         ->addColumn('status',function($data){
 

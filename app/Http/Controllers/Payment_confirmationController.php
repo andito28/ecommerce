@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Order;
+use App\Order_detail;
+use App\Product;
 use App\Payment_confirmation;
 
 class Payment_confirmationController extends Controller
@@ -12,6 +14,15 @@ class Payment_confirmationController extends Controller
     public function store(request $request){
 
             $order = Order::where('id',$request->order_id)->first();
+            $order_detail = Order_detail::where('order_id',$request->order_id)->get();
+            $stock = 0;
+            foreach($order_detail as $detail){
+                $product = Product::where('id',$detail->product_id)->first();
+                $stock = ($product->stock - $detail->qty);
+                $product->stock = $stock;
+                $product->save();
+            }
+
             $order->status = 1;
             $order->save();
 

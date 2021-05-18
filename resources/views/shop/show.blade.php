@@ -21,7 +21,7 @@
       <p>{{$product->desc}}</p>
     </div>
     <div class="col-md-4">
-      <div>
+      <div class="kartu">
         <p>Harga</p>
         <h2>Rp.{{number_format($product->price)}}</h2>
       <form action="{{route('storecart')}}" method="POST">

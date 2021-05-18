@@ -48,7 +48,7 @@
                         <a class="nav-link underline" href="/cart"><i class="fa fa-shopping-cart"></i>Keranjang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline" href="/orderList"><i class=""></i>Pesanan</a>
+                        <a class="nav-link underline" href="/orderList"><i class="fa fa-list"></i>Pesanan</a>
                     </li>
             <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,6 +74,13 @@
 	<div class="content">
         @yield('content')
 	</div>
+
+    <div class="wa">
+        <a href=" https://wa.me/6285298973249">
+            <img src="{{asset('images/wp.png')}}" alt="" style="width:80px;height:80px;">
+        </a>
+    </div>
+
 
 	<footer class="footer-distributed">
 		<div class="footer-right">

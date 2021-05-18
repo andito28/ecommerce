@@ -37,7 +37,7 @@
 
 
 @if ($carts->count() == 0)
-<div class="col-lg-12 item mb-5 pt-10">
+<div class="col-lg-12 item" style="margin-bottom:165px;margin-top:200px;">
     <div class="card text-center">
         <div class="card-body" style="padding-bottom:50px;padding-top:50px;">
             <h3>Tidak ada item dalam keranjang </h3>
@@ -116,6 +116,12 @@
     </div>
 </div>
 @endif
+</div>
+
+<div class="wa">
+    <a href=" https://wa.me/6285298973249">
+        <img src="{{asset('images/wp.png')}}" alt="" style="width:80px;height:80px;">
+    </a>
 </div>
 
 <footer class="footer-distributed" style="margin-top:20px;">

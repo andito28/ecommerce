@@ -39,8 +39,14 @@
 
               <div class="col-md-6">
                 <form action="{{route('shop')}}" class="form-inline ml-4">
-                    <input type="text" class="form-control" name="search" value="{{$search}}" placeholder="Pencarian . . . . .">
-                    <button class="btn btn-primary ">C a r i</button>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="search" value="{{$search}}" placeholder="Pencarian . . . . .">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary ">cari <i class="fa fa-search"></i></button>
+                        </div>
+                      </div>
+                    {{-- <input type="text" class="form-control" name="search" value="{{$search}}" placeholder="Pencarian . . . . .">
+                    <button class="btn btn-primary "><i class="fa fa-search"></i></button> --}}
                   </form>
               </div>
             </div>
@@ -49,7 +55,7 @@
             @if($products->count() < 1)
 
             <div class="col-lg-12 item mb-5 pt-10">
-                <div class="card">
+                <div class="card shadow bg-white rounded">
                     <div class="card-body" style="padding-bottom:50px;padding-top:50px;">
                         <h3>Produk Belum ada </h3>
                     </div>
@@ -58,8 +64,8 @@
 
             @else
             @foreach($products as $product)
-            <div class="col-lg-4 item mb-5 pt-10">
-            <div class="card">
+            <div class="col-lg-4 item mb-4 pt-10">
+            <div class="card shadow bg-white rounded">
             <div class="item" style="padding-top:10px;padding-bottom:10px;">
             <a href="{{route('shopsow',$product->id)}}">
               <img src="{{asset('storage/product/'.$product->images)}}" alt="nopic" height="100px" width="100px">

@@ -1,4 +1,4 @@
-@extends('template.user')
+@extends('template.cart')
 
 @section('title')
     Order
@@ -11,11 +11,6 @@
 @section('content')
 
 <div class="container">
-
-    <h3 id="pesanan">Detail Pesanan</h3>
-    <hr>
-    <div class="card">
-        <div class="card-body">
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -67,6 +62,11 @@
         </div>
         </div>
     </div>
+
+    <h3 id="pesanan">Detail Pesanan</h3>
+    <hr>
+    <div class="card shadow bg-white rounded">
+        <div class="card-body">
           <table cellpadding="2">
                 <tr>
                     <td>Nomor Faktur</td>
@@ -156,6 +156,30 @@
         </div>
       </div>
 </div>
+
+<div class="wa">
+    <a href=" https://wa.me/6285298973249">
+        <img src="{{asset('images/wp.png')}}" alt="" style="width:80px;height:80px;">
+    </a>
+</div>
+
+<footer class="footer-distributed" style="margin-top:20px;">
+    <div class="footer-right">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-gitlab"></i></a>
+    </div>
+    <div class="footer-left">
+        <p class="footer-links">
+            <a class="link-1" href="#">HOME</a>
+            <a href="#">SHOP</a>
+            <a href="#">ABOUT</a>
+            <a href="#">FAQ</a>
+        </p>
+        <p> &copy; 2021</p>
+    </div>
+
 @endsection
 
 
