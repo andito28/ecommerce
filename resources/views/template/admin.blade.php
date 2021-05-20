@@ -33,9 +33,6 @@ $tmp = \App\Order::where('status',1);
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css" integrity="sha256-pODNVtK3uOhL8FUNWWvFQK0QoQoV3YA9wGGng6mbZ0E=" crossorigin="anonymous" />
        <link rel="stylesheet" href=" {{asset('material/global/vendor/animsition/animsition.css')}}">
 
-
-
-
     <!-- Fonts -->
     <link rel="stylesheet" href="{{asset('material/global/fonts/material-design/material-design.min.css')}}">
     <link rel="stylesheet" href="{{asset('material/global/fonts/brand-icons/brand-icons.min.css')}}">
@@ -205,6 +202,13 @@ $tmp = \App\Order::where('status',1);
                               </a>
                             </li>
                         </ul> --}}
+                </a>
+              </li>
+
+              <li class="site-menu-item has-sub">
+                <a href="{{route('banner')}}">
+                        <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
+                        <span class="site-menu-title">Banner</span>
                 </a>
               </li>
 

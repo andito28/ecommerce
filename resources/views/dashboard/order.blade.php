@@ -8,7 +8,6 @@
 @section('content')
 <div class="col col-md-12">
     <div class="card card-shadow">
-        <div class="card-header bg-primary text-white">HALAMAN ORDERS</div>
 
         {{-- <div class="card-header bg-white pb-10 pt-30">
             <a href="javascript:void(0)" class="btn btn-primary btn-sm" id="tombol-tambah"> Add Product</a>

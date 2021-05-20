@@ -11,6 +11,62 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <style>
+
+        .slider{
+            padding-top: 50px;
+            margin-bottom: 0px;
+        }
+
+        /* make button larger and change their positions */
+        .slick-prev, .slick-next {
+            width: 50px;
+            height: 50px;
+            z-index: 1;
+        }
+        .slick-prev {
+            left: 5px;
+        }
+        .slick-next {
+            right: 5px;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+            font-size: 40px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .slider.slick-initialized.slick-slider.slick-dotted {
+            margin-bottom: 20px;
+        }
+
+        /* move dotted nav position */
+        .slick-dots {
+            bottom: 15px;
+        }
+        /* enlarge dots and change their colors */
+        .slick-dots li button:before {
+            font-size: 12px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+            opacity: 1;
+        }
+        .slick-dots li.slick-active button:before {
+            color: #dedede;
+        }
+
+        /* hide dots and arrow buttons when slider is not hovered */
+        .slider:not(:hover) .slick-arrow,
+        .slider:not(:hover) .slick-dots {
+            opacity: 0;
+        }
+        /* transition effects for opacity */
+        .slick-arrow,
+        .slick-dots {
+            transition: opacity 0.5s ease-out;
+        }
+    </style>
 </head>
 
 <body>
@@ -79,11 +135,21 @@
 		<div class="products">
 			{{-- <h2 id="featured">Featured Products</h2> --}}
             <div class="slider">
+                @php
+                    $banner = \App\Banner::all();
+                @endphp
                 <div>
                     <a href="#">
-                        <img src="{{asset('images/banner.png')}}" alt="Image 1" id="featured" style="width:100%;height:300px;">
+                        <img src="{{asset('images/banner.png')}}" alt="Image 1"  style="width:100%;height:260px;">
                     </a>
                 </div>
+                @foreach ($banner as $ban )
+                <div>
+                    <a href="#">
+                        <img src="{{asset('storage/banner/'.$ban->banner)}}" alt="Image 1" id="featured" style="width:100%;height:260px;">
+                    </a>
+                </div>
+                @endforeach
             </div>
             {{-- <img src="{{asset('images/banner.png')}}" alt="" id="featured" style="width:100%;height:300px;"> --}}
             <hr>
@@ -141,7 +207,7 @@
           $(document).ready(function(){
               $('.slider').slick({
                   autoplay: true,
-                  autoplaySpeed: 2500,
+                  autoplaySpeed: 5000,
                   dots: true
               });
           });

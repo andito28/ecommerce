@@ -50,7 +50,7 @@
                   </form>
               </div>
             </div>
-          <hr style="margin-bottom: 2em;height:2px;border:none;">
+          <hr style="margin-bottom: 20px;height:2px;border:none;">
           <div class="row list-product">
             @if($products->count() < 1)
 

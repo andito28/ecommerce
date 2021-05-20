@@ -68,6 +68,16 @@ Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 
     Route::get('/detailPesanan/{id}','OrderController@detailPesanan');
 
+    Route::get('/banner','BannerController@index')->name('banner');
+
+    Route::post('/addBanner','BannerController@store')->name('storeBanner');
+
+    Route::get('/dataBanner','BannerController@dataBanner')->name('dataBanner');
+
+    Route::get('/editBanner/{id}','BannerController@edit')->name('EditBanner');
+
+    Route::get('/deleteBanner/{id}','BannerController@delete')->name('deleteBanner');
+
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){
