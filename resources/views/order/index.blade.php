@@ -35,7 +35,7 @@
         </div>
 
         <div class="col-md-6">
-            <div class="card shadow bg-white rounded ">
+            {{-- <div class="card shadow bg-white rounded "> --}}
                 <table class="table">
 
                     <tbody>
@@ -71,7 +71,7 @@
                       </tr>
                     </tbody>
                   </table>
-            </div>
+            {{-- </div> --}}
         </div>
 
     </div>
