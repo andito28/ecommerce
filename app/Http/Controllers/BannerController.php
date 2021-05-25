@@ -25,7 +25,7 @@ class BannerController extends Controller
         })
         ->addColumn('image',function($data){
             $url = asset('storage/banner/'.$data->banner);
-            $image = "<img src='$url' style='width:300px;height:100px;'>";
+            $image = "<img src='$url' style='width:500px;height:120px;'>";
             return $image;
         })
         ->rawColumns(['image','action'])

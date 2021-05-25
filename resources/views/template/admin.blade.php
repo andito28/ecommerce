@@ -205,12 +205,12 @@ $tmp = \App\Order::where('status',1);
                 </a>
               </li>
 
-              <li class="site-menu-item has-sub">
+              {{-- <li class="site-menu-item has-sub">
                 <a href="{{route('banner')}}">
                         <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
                         <span class="site-menu-title">Banner</span>
                 </a>
-              </li>
+              </li> --}}
 
               <li class="site-menu-item has-sub">
                 <a href="{{route('users')}}">

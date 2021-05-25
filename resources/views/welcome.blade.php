@@ -145,7 +145,7 @@
                 </div>
                 @foreach ($banner as $ban )
                 <div>
-                    <a href="#">
+                    <a href="{{$ban->url}}">
                         <img src="{{asset('storage/banner/'.$ban->banner)}}" alt="Image 1" id="featured" style="width:100%;height:260px;">
                     </a>
                 </div>
@@ -158,7 +158,7 @@
                    @foreach($products as $product)
                    <div class="col-lg-4 col-md-6 pb-2 pt-2 pl-3 pr-3">
                     <div class="card shadow bg-white rounded" style="padding-top:20px;">
-                   <a href="">
+                   <a href="{{route('shopsow',$product->id)}}">
 					<img src="{{asset('storage/product/'.$product->images)}}" alt="nopic" height="150" width="150" style="padding-bottom:20px;">
 					</a>
                     <p class="product-name"><a href="#">{{$product->name}}</a></p>

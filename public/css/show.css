@@ -24,12 +24,12 @@ input.btn.btn-primary {
   transition: background-color 200ms linear;
 }
 
-.navbar-brand {
+/* .navbar-brand {
   font-family: "Helvetica", "sans-serif";
   font-weight: bold;
   font-style: italic;
   margin-left: 15px;
-}
+} */
 
 .navbar-nav {
   margin-right: 3em;
@@ -133,6 +133,13 @@ p {
 
 .btn {
   margin-top: 15px;
+}
+.wa-show{
+    position: fixed;
+    bottom:160px;
+    left:92%;
+    margin: 0px;
+    padding:0px;
 }
 
 .footer-distributed {
