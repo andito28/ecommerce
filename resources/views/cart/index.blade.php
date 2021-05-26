@@ -59,7 +59,7 @@
                 <div class="top">
                 <p class="item-name">{{$cart->product->name}}</p>
                     <div class="top-right">
-                    <p class="">Rp.{{number_format($cart->product->price)}}</p>
+                    <p class="item-price">Rp.{{number_format($cart->product->price)}}</p>
                     <select name="qty" class="quantity" data-item="{{$cart->id}}">
                         @for ($i = 1; $i <= 10; $i++)
                     <option value="{{$i}}" {{$cart->qty == $i ? 'selected' : ''}}>{{$i}}</option>
@@ -106,13 +106,9 @@
         <h4 class="total-price">Total Price: Rp.{{number_format($total)}}</h4>
     </div>
 
-    <div class="row pb-20">
-        <div class="col-md-6">
+    <div class="lb-lp">
             <a href="{{route('shop')}}" class="btn btn-primary" style="margin-top:20px;">< Lanjut Belanja</a>
-        </div>
-        <div class="col-md-6 text-right">
-            <a href="{{route('order')}}" class="btn btn-primary" style="margin-top:20px;">Lanjut Pemesanan ></a>
-        </div>
+            <a href="{{route('order')}}" class="btn btn-primary lp" style="margin-top:20px;">Lanjut Pemesanan ></a>
     </div>
 </div>
 @endif

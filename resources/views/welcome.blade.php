@@ -15,7 +15,7 @@
     <style>
 
         .slider{
-            padding-top: 50px;
+            padding-top: 45px;
             margin-bottom: 0px;
         }
 
@@ -95,7 +95,7 @@
     </nav>
     @else
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark background">
-            <a class="navbar-brand" href="#">My E-Commerce</a>
+            <a class="navbar-brand" href="/">My E-Commerce</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -140,13 +140,13 @@
                 @endphp
                 <div>
                     <a href="#">
-                        <img src="{{asset('images/banner.png')}}" alt="Image 1"  style="width:100%;height:260px;">
+                        <img src="{{asset('images/banner.png')}}" alt="Image 1"  class="banner">
                     </a>
                 </div>
                 @foreach ($banner as $ban )
                 <div>
                     <a href="{{$ban->url}}">
-                        <img src="{{asset('storage/banner/'.$ban->banner)}}" alt="Image 1" id="featured" style="width:100%;height:260px;">
+                        <img src="{{asset('storage/banner/'.$ban->banner)}}" alt="Image 1" id="featured" class="banner">
                     </a>
                 </div>
                 @endforeach
@@ -161,7 +161,7 @@
                    <a href="{{route('shopsow',$product->id)}}">
 					<img src="{{asset('storage/product/'.$product->images)}}" alt="nopic" height="150" width="150" style="padding-bottom:20px;">
 					</a>
-                    <p class="product-name"><a href="#">{{$product->name}}</a></p>
+                    <p class="product-name"><a href="{{route('shopsow',$product->id)}}">{{$product->name}}</a></p>
                     <p class="product-price">Rp {{number_format($product->price)}}</p>
                     </div>
                   </div>

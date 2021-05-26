@@ -25,6 +25,10 @@ p.product-price {
     font-size: 18px;
 }
 
+.banner{
+    width: 100%;
+    height: 260px;
+}
 .wa{
     position: fixed;
     bottom:20px;
@@ -298,8 +302,13 @@ p.product-price {
             font-weight: bold;
             padding-left: 50px;
         }
+
+        .title-name{
+            font-size: 25px;
+        }
+
         .more {
-            width: 40% !important;
+            width: 80% !important;
         }
         .navbar-collapse {
             background: #3f51b1;
@@ -312,6 +321,11 @@ p.product-price {
             /* text-align: left; */
         }
 
+        .banner{
+            width: 100%;
+            height: 120px;
+        }
+
         .wa{
             position: fixed;
             bottom:20px;
@@ -319,5 +333,6 @@ p.product-price {
             width:20px;
             padding:0px;
         }
+
     }
 }

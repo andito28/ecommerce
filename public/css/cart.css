@@ -16,7 +16,9 @@ body {
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
 } */
-
+.lp{
+    margin-left: 70%;
+}
 .wa{
     position: fixed;
     bottom:20px;
@@ -292,5 +294,57 @@ p{
     text-decoration: underline;
 }
 
+
+@media only screen and (max-width: 768px) {
+
+    .lp{
+        margin-left: 5px;
+    }
+    .wa{
+        position: fixed;
+        bottom:20px;
+        left:75%;
+        width:20px;
+        padding:0px;
+    }
+
+    .top-right p, .top-right select{
+        margin-right: 0px;
+      }
+
+      .item-name{
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .total-item{
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .item-price{
+        font-weight: 200;
+        font-size: 12px;
+      }
+
+      p.item-price{
+          margin-right:20px;
+      }
+
+      select.quantity{
+          font-size: 12px;
+          margin-right:20px;
+      }
+
+      .cart.pb-0 {
+          padding:5px;
+    }
+
+    .col-lg-9{
+        margin: 5px;;
+    }
+
+
+}
 
 

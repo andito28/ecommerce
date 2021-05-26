@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<div class="container" style="padding-bottom:120px;">
+<div class="container cnt">
 <h2 class="title-name">{{$product->name}}</h2>
   <hr>
   <div class="row">
@@ -38,7 +38,7 @@
         <img src="{{asset('images/wp.png')}}" alt="" style="width:80px;height:80px;">
     </a>
 </div>
-{{-- <footer class="footer-distributed">
+<footer class="footer-show">
   <div class="footer-right">
     <a href="#"><i class="fa fa-facebook"></i></a>
     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -55,7 +55,7 @@
     <p>N763 &copy; 2021</p>
   </div>
 
-</footer> --}}
+</footer>
 @endsection
 
 @section('script')
