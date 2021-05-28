@@ -72,7 +72,9 @@
     {{-- {{-- <script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
     <script type="text/javascript" src="{{asset('bootstrap-4.1.3/dist/js/bootstrap.js')}}"></script> --}}
 	{{-- <script type="text/javascript" src="{{asset('js/script.js')}}"></script> --}}
-    <script src="{{asset('js/app.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery-3.3.1.js')}}"></script>
+	<script type="text/javascript" src="{{asset('bootstrap-4.1.3/dist/js/bootstrap.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/script.js')}}"></script>
     @yield('script')
 </body>
 </html>
