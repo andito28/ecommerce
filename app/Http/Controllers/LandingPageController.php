@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Product;
+use App\Product;
 
 class LandingPageController extends Controller
 {
     public function index()
     {
-        $products = ['sfkd','fdsds','fdsds'];
+        $products = Product::take(6)->inRandomOrder()->get();
         return view('welcome',compact('products'));
     }
 }
