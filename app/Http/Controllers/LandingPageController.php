@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Product;
+use App\product;
 
 class LandingPageController extends Controller
 {
