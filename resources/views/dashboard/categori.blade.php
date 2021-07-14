@@ -202,19 +202,17 @@
 
                     success:function(){
                         $('#konfirmasi-modal').modal('hide');
-                         table =  $('#table-categori')
+                        var table =  $('#table-categori')
                         .dataTable();
                         table.fnDraw(false);
                         iziToast.warning({ //tampilkan izitoast warning
                         title: 'Data Berhasil Dihapus',
-                        message: '{{ Session('
-                        delete ')}}',
+                        message: '{{ Session('delete')}}',
                         position: 'bottomRight'
                     });
                     },
 
                     error:function(data){
-
                         console.log(data)
                     }
                 });

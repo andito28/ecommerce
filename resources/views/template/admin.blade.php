@@ -28,6 +28,12 @@ $tmp = \App\Order::where('status',1);
        <script src="//code.jquery.com/jquery.js"></script>
        <!-- DataTables -->
        <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+       <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+       <script src=" https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+       <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+       <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
 
        {{-- plugin alert izitoas --}}
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css" integrity="sha256-pODNVtK3uOhL8FUNWWvFQK0QoQoV3YA9wGGng6mbZ0E=" crossorigin="anonymous" />
@@ -185,14 +191,14 @@ $tmp = \App\Order::where('status',1);
               <li class="site-menu-item has-sub">
                 <a href="{{route('product')}}">
                         <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
-                        <span class="site-menu-title">Product</span>
+                        <span class="site-menu-title">Produk</span>
                 </a>
               </li>
 
               <li class="site-menu-item has-sub">
                 <a href="{{route('categori')}}">
                         <i class="site-menu-icon md-google-pages" aria-hidden="true"></i>
-                        <span class="site-menu-title">Categori</span>
+                        <span class="site-menu-title">Kategori</span>
                         {{-- <span class="site-menu-arrow"></span>
 
                         <ul class="site-menu-sub">
@@ -215,14 +221,22 @@ $tmp = \App\Order::where('status',1);
               <li class="site-menu-item has-sub">
                 <a href="{{route('users')}}">
                         <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
-                        <span class="site-menu-title">Users</span>
+                        <span class="site-menu-title">Pengguna</span>
                 </a>
               </li>
 
               <li class="site-menu-item has-sub">
                 <a href="{{route('orderStatus')}}">
                         <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
-                        <span class="site-menu-title">Orders <span class="badge badge-danger">{{$tmp->count()}}</span>
+                        <span class="site-menu-title">Pesanan <span class="badge badge-danger">{{$tmp->count()}}</span>
+                          </button></span>
+                </a>
+              </li>
+
+              <li class="site-menu-item has-sub">
+                <a href="{{route('laporanPenjualan')}}">
+                        <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
+                        <span class="site-menu-title">Laporan penjualan</span>
                           </button></span>
                 </a>
               </li>

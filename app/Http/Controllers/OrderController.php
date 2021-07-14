@@ -53,7 +53,13 @@ class OrderController extends Controller
         $order->status = '0';
         $order->save();
 
+        // $total = 0;
+
         foreach($cart_user as $cart){
+
+            // $total += $cart->product->price * $cart->qty;
+            // $order->total = $total;
+            // $order->save();
 
             $order_detail = new Order_detail;
             $order_detail->order_id = $order->id;
@@ -82,7 +88,7 @@ class OrderController extends Controller
 
     public function dataOrder(){
 
-        $order = Order::orderBy('updated_at','DESC')->get();
+        $order = Order::orderBy('created_at','DESC')->get();
         return Datatables::of($order)
         ->addColumn('status',function($data){
 
@@ -108,7 +114,11 @@ class OrderController extends Controller
             $nama = $data->User->name;
             return $nama;
         })
-        ->RawColumns(["status","action","nama"])
+        ->addColumn('tgl',function($data){
+            $tgl = date('d F Y',strtotime($data->created_at));
+            return $tgl;
+        })
+        ->RawColumns(["status","action","nama","tgl"])
         ->addIndexColumn()
         ->make(true);
     }
@@ -127,7 +137,7 @@ class OrderController extends Controller
 
         $post = Order::where('id',$request->id)->update([
             'status' => $request->status
-        ]);;
+        ]);
 
         return response()->json($post);
 

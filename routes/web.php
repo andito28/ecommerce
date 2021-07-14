@@ -78,6 +78,10 @@ Route::group(['middleware'=>['auth','checkrole:admin']],function(){
 
     Route::get('/deleteBanner/{id}','BannerController@delete')->name('deleteBanner');
 
+    Route::get('/laporanPenjualan','LaporanController@index')->name('laporanPenjualan');
+
+    Route::Post('/filterTgl','LaporanController@filterTgl')->name('filterTgl');
+
 });
 
 Route::group(['middleware'=>['auth','checkrole:user']],function(){

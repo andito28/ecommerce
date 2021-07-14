@@ -4,6 +4,7 @@
     Cart
 @endsection
 
+
 @section('style')
 <link rel="stylesheet" href="{{asset('css/cart.css')}}">
 @endsection
@@ -214,6 +215,7 @@
 @endsection
 
 @section('script')
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="text/javascript">
     (function(){
     const classname = document.querySelectorAll('.quantity');

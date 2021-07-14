@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Categori;
 use App\Product;
 use App\Order;
 use App\User;
+
 
 class DashboardController extends Controller
 {
@@ -14,7 +16,10 @@ class DashboardController extends Controller
         $user = User::count();
         $product = Product::count();
         $categori = Categori::count();
-        $order = Order::whereDay('created_at', date('d'))->count();
+        $order = Order::whereDate('created_at', date('Y-m-d'))->count();
+
+
         return view('dashboard.dashboard',compact('user','product','categori','order'));
+
     }
 }

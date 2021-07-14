@@ -20,7 +20,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>No Faktur</th>
+                        <th>Tgl pemesanan</th>
                         <th>Nama</th>
                         <th>Status</th>
                         <th>Action</th>
@@ -167,7 +167,7 @@
                                         </select>
                                     </div>
                                     <div class="modal-footer bg-whitesmoke pb-0">
-                                        <button type="submit" class="btn btn-primary btn-sm">Update Status</button>
+                                        <button type="submit" id="updateS" class="btn btn-primary btn-sm">Update Status</button>
                                     </div>
                             </div>
 
@@ -219,7 +219,7 @@
             ajax : "{{route('dataOrder')}}",
             columns : [
                 {data : 'DT_RowIndex' , name: 'DT_RowIndex'},
-                {data : 'id', name : 'id'},
+                {data : 'tgl', name : 'tgl'},
                 {data : 'nama' , name : 'nama'},
                 {data : 'status', name : 'status'},
                 {data : 'action', name : 'action'}
@@ -335,6 +335,7 @@
                    let h3 = document.createElement('h3');
                    h3.className = "text-danger text-center";
                    h3.innerHTML = "Belum melakukan pembayaran";
+                //    $('#updateS').hide();
 
                    $('#confirm').html(h3);
 
