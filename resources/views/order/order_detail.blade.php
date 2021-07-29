@@ -145,11 +145,26 @@
                 </tr>
           </table>
 
-            @if ($order->status == 0 || $order->status == 3)
+            @if ($order->status == 0)
             <div class="alert alert-success" role="alert">
                 <p>Silahkan Lakukan Pembayaran Ke Bank ABC</p>
                 <p class="mb-0">Nomor Account : 1234-567-9810-1112 (Andito)</p>
                 <p>Setelah Melakukan pembayaran, Silahkan lakukan konfirmasi pembayaran <a href="#" data-toggle="modal" data-target="#exampleModal" class="alert-link" style="color:blue">Disini</a></p>
+            </div>
+            @elseif($order->status == 3)
+            <div class="alert alert-success" role="alert">
+                <p><b> Pembayaran di tolak !!!</b></p>
+                <p>Silahkan Lakukan Pembayaran Ke Bank ABC</p>
+                <p class="mb-0">Nomor Account : 1234-567-9810-1112 (Andito)</p>
+                <p>Setelah Melakukan pembayaran, Silahkan lakukan konfirmasi pembayaran <a href="#" data-toggle="modal" data-target="#exampleModal" class="alert-link" style="color:blue">Disini</a></p>
+            </div>
+            @elseif($order->status == 2)
+            <div class="alert alert-success" role="alert">
+                <p><b> Barang Sedang Dalam Pengiriman !!!</b></p>
+            </div>
+            @elseif($order->status == 1)
+            <div class="alert alert-success" role="alert">
+                <p><b> Pembayaran Sedang Di validasi !!!</b></p>
             </div>
             @endif
 
